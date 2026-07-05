@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 12% 4%;
+    --foreground: 30 15% 95%;
+    --card: 240 10% 6%;
+    --card-foreground: 30 15% 95%;
+    --popover: 240 10% 6%;
+    --popover-foreground: 30 15% 95%;
+    --primary: 28 55% 52%;
+    --primary-foreground: 30 15% 95%;
+    --secondary: 240 8% 12%;
+    --secondary-foreground: 30 15% 95%;
+    --muted: 240 6% 18%;
+    --muted-foreground: 30 8% 60%;
+    --accent: 28 55% 52%;
+    --accent-foreground: 30 15% 95%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 6% 15%;
+    --input: 240 6% 15%;
+    --ring: 28 55% 52%;
+    --radius: 0.625rem;
+
+    --copper: #C87941;
+    --copper-light: #D4A574;
+    --cream: #F5F0EB;
+    --dark: #0A0A0F;
+    --dark-card: #111118;
+    --dark-brown: #1C1410;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: #0A0A0F;
+    color: #F5F0EB;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
+  ::selection {
+    background: rgba(200, 121, 65, 0.3);
+    color: #F5F0EB;
+  }
+}
+
+@layer utilities {
+  .text-gradient-copper {
+    background: linear-gradient(135deg, #C87941, #D4A574);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-gradient-dark {
+    background: linear-gradient(180deg, #0A0A0F 0%, #111118 100%);
+  }
+
+  .border-copper-subtle {
+    border-color: rgba(200, 121, 65, 0.15);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A0A0F;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C8794150;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C8794180;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
