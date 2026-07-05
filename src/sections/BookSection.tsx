@@ -6,7 +6,7 @@ const highlights = [
   'Unngå de vanligste feilene i kirkeprosjekter',
   'Lær om absorpsjon, diffusjon og etterklang',
   'Praktiske råd basert på 30 års erfaring',
-  'Skrevet for kirkeansatte, rådmenn og tekniske ansvarlige',
+  'Skrevet for kirkeansatte, beslutningstagere og tekniske ansvarlige',
 ]
 
 export default function BookSection() {
