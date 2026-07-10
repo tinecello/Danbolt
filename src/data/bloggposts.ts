@@ -149,6 +149,48 @@ export const bloggposts: Bloggpost[] = [
     bilde: '/blogg-teknikk.jpg',
     lestetid: 6,
   },
+
+    {
+    id: '4',
+    slug: 'ns8175-etterklangskrav',
+    tittel: 'NS 8175 og etterklangskravene: hva et skolebygg faktisk må oppfylle',
+    ingress: 'Hva krever NS 8175 av etterklang i klasserom og gymsal – og hva betyr klasse C i praksis? En klar forklaring av lydkravene i skolebygg, og hvorfor de må måles.',
+    innhold: `
+<p>«Vi må jo følge kravene.» Men hvilke krav – og hva betyr egentlig et tall som 0,6 sekund for et rom fullt av elever?</p>
+
+<p>Når et skolebygg oppføres eller pusses opp, dukker kravene til lydforhold opp. Referansen er nesten alltid den samme: NS 8175. De fleste som har ansvar for et bygg har hørt navnet uten helt å vite hva standarden faktisk krever. Og det er verdt å forstå, for det er forskjellen på et rom elevene faktisk hører i, og et som så vidt passerer på papiret.</p>
+
+<h2>Hva NS 8175 er – og hvorfor den gjelder deg</h2>
+
+<p>NS 8175 er den norske standarden som setter grenseverdier for lydforhold i bygninger, delt inn i lydklasser fra A til D – der A er best og C er minimum. Det som gjør den bindende: byggteknisk forskrift (TEK17) peker på klasse C som nivået som tilfredsstiller byggereglene. For et skolebygg betyr derfor «oppfyller klasse C» det samme som «oppfyller lovkravet». Det er ikke en anbefaling du kan vifte bort – det er gulvet.</p>
+
+<h2>Kravet i klartekst</h2>
+
+<p>For et vanlig klasserom krever klasse C at etterklangstiden er 0,6 sekund eller kortere – altså rundt et halvt sekund. Konkret betyr det at når læreren slutter å snakke, skal lyden være praktisk talt borte i løpet av et halvt sekund, så ordene ikke overlapper det neste som sies. For større undervisningsrom og auditorier gjelder en romhøyde-formel (maks etterklang omtrent 0,16 × takhøyden). Og så er det et krav folk glemmer: bakgrunnsstøy fra tekniske installasjoner – typisk ventilasjon – har sin egen grense, i størrelsesorden 30 dB. Et stille rom der viften drukner talen stryker like fullt som et rom med for lang etterklang.</p>
+
+<h2>Klasse C er minstekravet – ikke målet</h2>
+
+<p>Her ligger den viktigste nyansen. Klasse C er gulvet, ikke målet. Stigen A-B-C-D finnes nettopp fordi noen rom trenger bedre enn minimum. For rom der tydelig tale er avgjørende – og for støyende bruk som en barnehage eller et aktivt klasserom – er det ofte verdt å sikte mot klasse B. Å treffe minstekravet og å skape et rom som faktisk er godt å lære i, er ikke alltid det samme.</p>
+
+<h2>Gymsalen er en annen liga</h2>
+
+<p>En gymsal uten akustiske tiltak har gjerne to til fire ganger så lang etterklang som et klasserom. Stort volum, harde og lettvaskbare flater og høy takhøyde drar alle samme vei. Romhøyde-formelen alene forteller at jobben er større der. Derfor må en gymsal som brukes til avslutninger og konserter få akustikken på plass før et anlegg i det hele tatt dimensjoneres – aldri motsatt.</p>
+
+<h2>Du kan ikke høre deg til om et rom er innenfor</h2>
+
+<p>Du kan ikke høre om et rom ligger på 0,6 sekund. Det må måles. En måling dokumenterer, i tall, hvor rommet står mot kravet – per oktavbånd, med bakgrunnsstøy. Det gjør «vi tror det er greit» om til «her står vi, og dette skal til for å lukke gapet». Det er dokumentasjon, ikke synsing. Og fordi NS 8175 formelt er et prosjekteringskrav, dokumenterer en måling av et eksisterende rom om det ville tilfredsstilt klasse C – fullt nyttig, og den ærlige måten å ramme det inn på.</p>
+
+<h2>Kort oppsummert</h2>
+
+<p>NS 8175 gir deg en objektiv målestokk: klasse C er det lovpålagte gulvet, gode rom sikter høyere, og bare en måling forteller hvor et rom faktisk står. For en skole er det forskjellen på å anta at rommene er gode nok, og å vite det.</p>
+
+<p><strong>Lurer dere på om klasserommene eller gymsalen oppfyller NS 8175?</strong> Jeg måler etterklang og bakgrunnsstøy og dokumenterer hvor dere står mot kravet – et klart grunnlag for hva som eventuelt må gjøres. <a href="/#/kontakt">Ta kontakt for en uforpliktende prat.</a></p>
+    `,
+    kategori: 'Skole',
+    dato: '2026-07-08',
+    bilde: '/blogg-skole.jpg',
+    lestetid: 7,
+  },
 ]
 
 export const kategorier = ['Alle', 'Akustikk', 'Kirke', 'Kulturhus', 'Teknikk', 'Tips']
