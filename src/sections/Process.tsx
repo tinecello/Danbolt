@@ -53,7 +53,7 @@ export default function Process() {
                       {isActive && <ArrowRight size={12} className="text-copper-light/60" />}
                     </div>
                     <h3 className={`font-serif text-xl mb-2 transition-colors ${isActive ? 'text-cream' : 'text-cream/60'}`}>{step.title}</h3>
-                    <p className={`text-sm leading-relaxed transition-all duration-300 overflow-hidden ${isActive ? 'text-cream/60 max-h-40 opacity-100' : 'text-cream/30 max-h-0 opacity-0 lg:max-h-40 lg:opacity-100 lg:text-cream/40'}`}>{step.description}</p>
+              <div className={`grid transition-all duration-300 ${isActive ? 'grid-rows-[1fr]' : 'grid-rows-[0fr] lg:grid-rows-[1fr]'}`}><p className={`text-sm leading-relaxed overflow-hidden min-h-0 ${isActive ? 'text-cream/60' : 'text-cream/30 lg:text-cream/40'}`}>{step.description}</p></div>
                   </div>
                 </div>
               )
