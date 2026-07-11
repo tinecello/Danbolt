@@ -56,7 +56,7 @@ export default function Philosophy() {
         >
           <div
             className="relative rounded-2xl overflow-hidden border border-copper/10"
-            style={{ height: 'clamp(320px, 45vh, 520px)' }}
+            style={{ height: 'clamp(320px, 45svh, 520px)' }}
           >
             <img
               src="/natur-rom.jpg"
