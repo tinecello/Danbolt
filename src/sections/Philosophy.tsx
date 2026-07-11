@@ -18,10 +18,11 @@ export default function Philosophy() {
   }, [])
 
   useEffect(() => {
+    const viewportHeight = window.innerHeight
     const handleScroll = () => {
       if (!sectionRef.current) return
       const rect = sectionRef.current.getBoundingClientRect()
-      const progress = -rect.top / window.innerHeight
+      const progress = -rect.top / viewportHeight
       setScrollY(progress * 40)
     }
     window.addEventListener('scroll', handleScroll, { passive: true })
