@@ -142,11 +142,11 @@ export default function Hero() {
   }, [handleMouseMove, handleMouseLeave])
 
   return (
-    <section id="hjem" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="hjem" className="relative min-h-[100svh] flex items-center justify-center overflow-hidden">
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full cursor-crosshair" style={{ zIndex: 1 }} />
       <div className="absolute inset-0 pointer-events-none"
         style={{ background: 'radial-gradient(ellipse at 50% 30%, transparent 0%, rgba(10,10,15,0.6) 70%, rgba(10,10,15,0.95) 100%)', zIndex: 2 }} />
-      <div className="relative z-10 text-center px-6 max-w-4xl mx-auto" style={{ marginTop: '-5vh' }}>
+      <div className="relative z-10 text-center px-6 max-w-4xl mx-auto" style={{ marginTop: '-5svh' }}>
         <p className="text-copper-light text-xs sm:text-sm lg:text-base font-medium tracking-[0.2em] sm:tracking-[0.25em] uppercase mb-4 sm:mb-6 opacity-80">
           Uavhengig teknisk rådgiver
         </p>
