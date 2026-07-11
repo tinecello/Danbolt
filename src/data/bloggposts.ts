@@ -44,7 +44,7 @@ export const bloggposts: Bloggpost[] = [
 <p>Det handler ikke om å kjøpe mest mulig, men om å kjøpe riktig. Noen ganger er svaret et nytt anlegg. Andre ganger er det akustiske tiltak, en ommøblering av høyttalerne, eller ganske enkelt en riktig innstilling. Poenget er at du ikke kan vite det før rommet er forstått.</p>
 <h2>Kort oppsummert</h2>
 <p>Et lydanlegg er ikke en løsning i seg selv — det er et verktøy som virker eller ikke virker avhengig av rommet det står i. Forstå rommet først, så vet du hva du faktisk trenger å kjøpe. Det er hele forskjellen mellom å gjette og å vite.</p>
-<p><strong>Vurderer dere lyden i et lokale?</strong> Jeg gjør en uavhengig kartlegging av rommet før dere bruker en krone på utstyr — og gir dere et ærlig råd om hva som faktisk må til. <a href="/kontakt">Ta kontakt for en uforpliktende prat.</a></p>
+<p><strong>Vurderer dere lyden i et lokale?</strong> Jeg gjør en uavhengig kartlegging av rommet før dere bruker en krone på utstyr — og gir dere et ærlig råd om hva som faktisk må til. <a href="/#kontakt">Ta kontakt for en uforpliktende prat.</a></p>
     `,
     kategori: 'Akustikk',
     dato: '2026-06-15',
@@ -73,7 +73,7 @@ export const bloggposts: Bloggpost[] = [
 <p>Det er nettopp derfor en måling er verdt så mye: den skiller de tre fra hverandre og forteller hva som faktisk drar opplevelsen ned i akkurat ditt rom. Uten den gjetter man, og gjetting er dyrt.</p>
 <h2>Kort oppsummert</h2>
 <p>God akustikk er ikke «høy nok lyd» — det er kort nok etterklang, høy nok taletydelighet og kontroll på refleksjonene, tilpasset det rommet skal brukes til. Kjenner du disse tre begrepene, forstår du hvorfor to rom med samme anlegg kan låte så forskjellig.</p>
-<p><strong>Lurer dere på hva som gjør lyden vanskelig i akkurat deres lokale?</strong> En måling gir svaret — og et konkret grunnlag for hva som bør gjøres. <a href="/kontakt">Ta kontakt for en uavhengig vurdering.</a></p>
+<p><strong>Lurer dere på hva som gjør lyden vanskelig i akkurat deres lokale?</strong> En måling gir svaret — og et konkret grunnlag for hva som bør gjøres. <a href="/#kontakt">Ta kontakt for en uavhengig vurdering.</a></p>
     `,
     kategori: 'Akustikk',
     dato: '2026-06-01',
@@ -102,7 +102,7 @@ export const bloggposts: Bloggpost[] = [
 <p>Dette er ikke et argument mot leverandører — de skal fortsatt levere og installere anlegget. Poenget er rekkefølgen og rollefordelingen. En uavhengig kartlegging og kravspesifikasjon først gir leverandøren et tydelig mål å levere på, og gir deg trygghet for at valget er styrt av rommet ditt og ikke av et lager. Ofte blir også leverandørens jobb enklere og tilbudet mer presist, fordi oppgaven er klart definert fra start.</p>
 <h2>Kort oppsummert</h2>
 <p>Rådet du får henger sammen med hvordan den som gir det tjener pengene sine. En leverandør anbefaler i god tro det de fører; en uavhengig rådgiver anbefaler det rommet trenger. Skal du investere i lyd, er det verdt å skille de to rollene — og starte med det uavhengige rådet.</p>
-<p><strong>Står dere foran en investering i lyd?</strong> Jeg gir dere et uhildet råd om hva rommet faktisk trenger — før dere binder dere til en løsning. <a href="/kontakt">Ta kontakt for en uforpliktende samtale.</a></p>
+<p><strong>Står dere foran en investering i lyd?</strong> Jeg gir dere et uhildet råd om hva rommet faktisk trenger — før dere binder dere til en løsning. <a href="/#kontakt">Ta kontakt for en uforpliktende samtale.</a></p>
     `,
     kategori: 'Akustikk',
     dato: '2026-05-20',
@@ -129,7 +129,7 @@ export const bloggposts: Bloggpost[] = [
 <p>Du kan ikke høre om et rom ligger på 0,6 sekund. Det må måles. En måling dokumenterer, i tall, hvor rommet står mot kravet – per oktavbånd, med bakgrunnsstøy. Det gjør «vi tror det er greit» om til «her står vi, og dette skal til for å lukke gapet». Det er dokumentasjon, ikke synsing. Og fordi NS 8175 formelt er et prosjekteringskrav, dokumenterer en måling av et eksisterende rom om det ville tilfredsstilt klasse C – fullt nyttig, og den ærlige måten å ramme det inn på.</p>
 <h2>Kort oppsummert</h2>
 <p>NS 8175 gir deg en objektiv målestokk: klasse C er det lovpålagte gulvet, gode rom sikter høyere, og bare en måling forteller hvor et rom faktisk står. For en skole er det forskjellen på å anta at rommene er gode nok, og å vite det.</p>
-<p><strong>Lurer dere på om klasserommene eller gymsalen oppfyller NS 8175?</strong> Jeg måler etterklang og bakgrunnsstøy og dokumenterer hvor dere står mot kravet – et klart grunnlag for hva som eventuelt må gjøres. <a href="/kontakt">Ta kontakt for en uforpliktende prat.</a></p>
+<p><strong>Lurer dere på om klasserommene eller gymsalen oppfyller NS 8175?</strong> Jeg måler etterklang og bakgrunnsstøy og dokumenterer hvor dere står mot kravet – et klart grunnlag for hva som eventuelt må gjøres. <a href="/#kontakt">Ta kontakt for en uforpliktende prat.</a></p>
     `,
     kategori: 'Skole',
     dato: '2026-07-08',
