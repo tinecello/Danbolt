@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 import { ArrowRight, Calendar, Clock } from 'lucide-react'
 import { bloggposts, kategorier, formatDato } from '../data/bloggposts'
 
@@ -24,12 +25,22 @@ export default function Blogg() {
 
   return (
     <section ref={sectionRef} className="relative min-h-screen bg-dark overflow-hidden pt-20">
+      <Helmet>
+        <title>Blogg | Thorbjørn Danbolt – Uavhengig rådgiver lyd &amp; akustikk</title>
+        <meta name="description" content="Faglige artikler om akustikk, taletydelighet, lydanlegg og lydkrav i kirker, skoler, kulturhus og møterom. Erfaringer og råd fra 30 år i bransjen." />
+        <link rel="canonical" href="https://danbolt.no/blogg" />
+        <meta property="og:title" content="Blogg | Thorbjørn Danbolt – Lyd & Akustikk" />
+        <meta property="og:description" content="Faglige artikler om akustikk, taletydelighet, lydanlegg og lydkrav i kirker, skoler, kulturhus og møterom." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://danbolt.no/blogg" />
+      </Helmet>
+
       {/* Header */}
       <div className={`text-center pt-16 pb-12 transition-all duration-1000 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         <p className="text-copper-light text-sm font-medium tracking-[0.2em] uppercase mb-4">Faglige innsikter</p>
         <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-cream mb-4">Akustisk Innsikt</h1>
         <p className="text-cream/50 text-base lg:text-lg max-w-xl mx-auto">
-          Erfaringer, rad og faglige perspektiver fra 30 ar med lyd og akustikk.
+          Erfaringer, råd og faglige perspektiver fra 30 år med lyd og akustikk.
         </p>
       </div>
 
@@ -92,7 +103,7 @@ export default function Blogg() {
         </div>
         {filtrerte.length === 0 && (
           <div className="text-center py-20">
-            <p className="text-cream/40 text-lg">Ingen poster i denne kategorien enna.</p>
+            <p className="text-cream/40 text-lg">Ingen poster i denne kategorien ennå.</p>
           </div>
         )}
       </div>

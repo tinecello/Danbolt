@@ -1,4 +1,5 @@
 import { useParams, Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 import { ArrowLeft, Calendar, Clock, User } from 'lucide-react'
 import { bloggposts, formatDato } from '../data/bloggposts'
 import EtterklangAnimasjon from '../components/blogg/EtterklangAnimasjon'
@@ -21,12 +22,53 @@ export default function BloggPost() {
     )
   }
 
+  const postUrl = `https://danbolt.no/blogg/${post.slug}`
+  const bildeUrl = `https://danbolt.no${post.bilde}`
+
   const relaterte = bloggposts
     .filter(p => p.kategori === post.kategori && p.id !== post.id)
     .slice(0, 3)
 
   return (
     <article className="min-h-screen bg-dark pt-20">
+      <Helmet>
+        <title>{`${post.tittel} | Thorbjørn Danbolt`}</title>
+        <meta name="description" content={post.ingress} />
+        <link rel="canonical" href={postUrl} />
+        <meta property="og:title" content={post.tittel} />
+        <meta property="og:description" content={post.ingress} />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={postUrl} />
+        <meta property="og:image" content={bildeUrl} />
+        <meta property="og:locale" content="nb_NO" />
+        <meta property="article:published_time" content={post.dato} />
+        <meta property="article:author" content="Thorbjørn Danbolt" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={post.tittel} />
+        <meta name="twitter:description" content={post.ingress} />
+        <meta name="twitter:image" content={bildeUrl} />
+        <script type="application/ld+json">{JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'Article',
+          headline: post.tittel,
+          description: post.ingress,
+          image: bildeUrl,
+          datePublished: post.dato,
+          inLanguage: 'nb-NO',
+          mainEntityOfPage: postUrl,
+          author: {
+            '@type': 'Person',
+            name: 'Thorbjørn Danbolt',
+            url: 'https://danbolt.no',
+          },
+          publisher: {
+            '@type': 'Organization',
+            name: 'Thorbjørn Danbolt – Lyd & Akustikk',
+            url: 'https://danbolt.no',
+          },
+        })}</script>
+      </Helmet>
+
       {/* Hero bilde */}
       <div className="relative aspect-[21/9] max-h-[500px]">
         <img src={post.bilde} alt={post.tittel} className="w-full h-full object-cover" />
@@ -38,13 +80,10 @@ export default function BloggPost() {
         <Link to="/blogg" className="inline-flex items-center gap-2 text-cream/50 text-sm hover:text-copper-light transition-colors mb-6">
           <ArrowLeft size={16} /> Tilbake til bloggen
         </Link>
-
         <span className="inline-block px-3 py-1 bg-copper/15 text-copper-light text-xs font-medium uppercase tracking-wider rounded mb-4">
           {post.kategori}
         </span>
-
         <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-cream mb-6 leading-tight">{post.tittel}</h1>
-
         <div className="flex items-center gap-5 text-cream/40 text-sm mb-10 pb-10 border-b border-cream/5">
           <span className="flex items-center gap-1.5"><User size={14} /> Thorbjørn Danbolt</span>
           <span className="flex items-center gap-1.5"><Calendar size={14} /> {formatDato(post.dato)}</span>
@@ -60,7 +99,7 @@ export default function BloggPost() {
         {post.slug === 'etterklangstid-kirke' && <EtterklangAnimasjon />}
         {post.slug === 'absorpsjon-vs-diffusjon' && <AbsorpsjonDiffusjonAnimasjon />}
         {post.slug === 'taletydelighet-sti' && <TaletydelighetAnimasjon />}
-                {post.slug === 'ns8175-etterklangskrav' && <NS8175Animasjon />}
+        {post.slug === 'ns8175-etterklangskrav' && <NS8175Animasjon />}
 
         {/* Hovedinnhold */}
         <div

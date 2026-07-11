@@ -5,3 +5,11 @@
 [build.environment]
   NODE_VERSION = "20"
   NPM_FLAGS = "--legacy-peer-deps"
+
+# SPA-fallback: alle adresser (f.eks. /blogg/ns8175-etterklangskrav) serveres
+# av index.html, slik at React Router kan vise riktig side. Uten denne gir
+# direktebesøk og oppfrisking på undersider 404.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

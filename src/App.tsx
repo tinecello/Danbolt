@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { HashRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate, useNavigate, useLocation } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
 import Navigation from './sections/Navigation'
 import Hero from './sections/Hero'
@@ -14,6 +14,21 @@ import Contact from './sections/Contact'
 import Blogg from './pages/Blogg'
 import BloggPost from './pages/BloggPost'
 import Footer from './sections/Footer'
+
+// Videresender gamle HashRouter-adresser (danbolt.no/#/blogg/...) til de nye
+// rene URL-ene (danbolt.no/blogg/...), slik at gamle delte lenker fortsatt virker.
+function LegacyHashRedirect() {
+  const navigate = useNavigate()
+  const location = useLocation()
+
+  useEffect(() => {
+    if (location.hash.startsWith('#/')) {
+      navigate(location.hash.slice(1), { replace: true })
+    }
+  }, [location.hash, navigate])
+
+  return null
+}
 
 function Forside() {
   const [scrolled, setScrolled] = useState(false)
@@ -66,13 +81,16 @@ function BloggPostLayout() {
 function App() {
   return (
     <HelmetProvider>
-      <HashRouter>
+      <BrowserRouter>
+        <LegacyHashRedirect />
         <Routes>
           <Route path="/" element={<Forside />} />
           <Route path="/blogg" element={<BloggLayout />} />
           <Route path="/blogg/:slug" element={<BloggPostLayout />} />
+          {/* Ukjente adresser sendes til forsiden i stedet for å gi blank side */}
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
-      </HashRouter>
+      </BrowserRouter>
     </HelmetProvider>
   )
 }
