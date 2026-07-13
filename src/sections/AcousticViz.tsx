@@ -252,9 +252,9 @@ export default function AcousticViz() {
               <CheckCircle2 className="text-copper-light" size={20} />
             </div>
             <p className="text-cream/70 text-sm lg:text-base text-left">
-              <strong className="text-cream">Invester i akustisk rådgivning først.</strong>
+              <strong className="text-cream">Invester i uavhengig rådgivning først.</strong>
               <br />
-              Det sparer deg for dyre feilkjøp og gir et lydanlegg som faktisk fungerer.
+              Det sparer dere for dyre feilkjøp – enten løsningen er akustisk behandling, nytt lydanlegg eller bare justering av det dere har. Anbefalingen min er aldri påvirket av hva en leverandør ønsker å levere.
             </p>
           </div>
         </div>
