@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { ArrowUpRight, Phone } from 'lucide-react'
 
 const references = [
-  { name: 'Ål Kulturhus', category: 'Kulturhus', description: 'Etterklangsanlegg og akustikkplater', color: 'from-amber-900/40 to-dark-card' },
+  { name: 'Ål Kulturhus', category: 'Kulturhus', description: 'Romakustisk vurdering, akustikkplater og etterklangsanlegg – rommet ble behandlet før elektronikken ble dimensjonert.', color: 'from-amber-900/40 to-dark-card' },
   { name: 'Åsane Kulturhus', category: 'Kulturhus', description: 'Etterklangsanlegg', color: 'from-slate-800/40 to-dark-card' },
 ]
 
