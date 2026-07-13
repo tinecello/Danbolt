@@ -190,7 +190,7 @@ export default function Hero() {
           Lyd<br /><span className="text-gradient-copper">&amp; Akustikk</span>
         </h1>
         <p className="text-cream/60 text-sm sm:text-base lg:text-lg max-w-xl mx-auto mb-8 sm:mb-10 leading-relaxed">
-                    Uavhengig rådgivning, akustiske målinger og kvalitetssikring for skoler, barnehager, kirker, møterom, idrettshaller, kulturhus og offentlige bygg – med uavhengig vurdering av universell utforming og teleslynge.
+                    Uavhengig rådgivning, akustiske målinger, romakustiske tiltaksplaner og kvalitetssikring for skoler, barnehager, kirker, møterom, idrettshaller, kulturhus og offentlige bygg – med uavhengig vurdering av universell utforming og teleslynge.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
           <a href="#kontakt" onClick={(e) => { e.preventDefault(); document.querySelector('#kontakt')?.scrollIntoView({ behavior: 'smooth' }) }}
