@@ -45,7 +45,7 @@ export default function About() {
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 p-5 bg-dark-card border border-copper/10 rounded-xl mb-5">
               <div className="w-12 h-12 rounded-lg bg-copper/10 flex items-center justify-center flex-shrink-0"><BookOpen size={22} className="text-copper-light" /></div>
               <div className="flex-1">
-                <p className="text-cream font-medium text-sm mb-1">Fagbok: Lydanlegg i kirkene</p>
+                <p className="text-cream font-medium text-sm mb-1">Fagbok: Lyd i kirken</p>
                 <p className="text-cream/40 text-xs">Erfaringer og råd fra 30 år med lyd og akustikk i norske kirker</p>
               </div>
               <a href="#fagbok" onClick={(e) => { e.preventDefault(); document.querySelector('#fagbok')?.scrollIntoView({ behavior: 'smooth' }) }}
