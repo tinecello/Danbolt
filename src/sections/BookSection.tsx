@@ -94,7 +94,7 @@ export default function BookSection() {
                 className="group inline-flex items-center justify-center gap-2 px-6 py-3.5 text-cream/60 border border-cream/15 rounded-full font-medium hover:text-cream hover:border-cream/30 transition-all duration-300"
               >
                 <GraduationCap size={16} />
-                Se mikrokurset
+                Se det grunnleggende kurset
               </Link>
             </div>
           </div>

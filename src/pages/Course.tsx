@@ -17,44 +17,38 @@ import {
 
 const modules = [
   {
-    number: '01',
+    number: '1',
     title: 'Slik går lyden',
-    duration: '5 min',
     description: 'Fra stemme og mikrofon til mikser, høyttalere, hørselshjelpemidler og strømming.',
     icon: PlayCircle,
   },
   {
-    number: '02',
+    number: '2',
     title: 'Før dørene åpnes',
-    duration: '7 min',
     description: 'Riktig profil, batterier, taletest, avspilling og de viktigste kontrollpunktene.',
     icon: CheckCircle2,
   },
   {
-    number: '03',
+    number: '3',
     title: 'Mikrofonen først',
-    duration: '8 min',
     description: 'Avstand, retning og trygg bruk av håndholdt mikrofon, mygg, bøyle og lesepult.',
     icon: Mic,
   },
   {
-    number: '04',
+    number: '4',
     title: 'Trygg normaldrift',
-    duration: '7 min',
     description: 'Gudstjeneste, gravferd, vielse og dåp – med tydelige roller og gode overganger.',
     icon: ShieldCheck,
   },
   {
-    number: '05',
+    number: '5',
     title: 'Fem vanlige feil',
-    duration: '10 min',
     description: 'Ingen lyd, svak lyd, hyling, støy og trådløs mikrofon uten signal.',
     icon: Wrench,
   },
   {
-    number: '06',
+    number: '6',
     title: 'Etter bruk og ansvar',
-    duration: '5 min',
     description: 'Avslutning, lading, enkel feillogg og hva som ikke skal endres uten systemansvarlig.',
     icon: GraduationCap,
   },
@@ -79,10 +73,10 @@ export default function Course() {
         <title>Lydkurs for kirketjenere | Trygg lyd i kirken</title>
         <meta
           name="description"
-          content="Praktisk mikrokurs i mikrofonbruk, trygg normaldrift og enkel feilsøking for kirketjenere, vikarer og frivillige."
+          content="Praktisk grunnleggende kurs i mikrofonbruk, trygg normaldrift og enkel feilsøking for kirketjenere, vikarer og frivillige."
         />
         <link rel="canonical" href="https://danbolt.no/kurs/trygg-lyd-i-kirken" />
-        <meta property="og:title" content="Trygg lyd i kirken | Mikrokurs for kirketjenere" />
+        <meta property="og:title" content="Trygg lyd i kirken | Grunnleggende kurs for kirketjenere" />
         <meta
           property="og:description"
           content="Lær å klargjøre lydanlegget, bruke mikrofonene bedre og løse de vanligste feilene – uten å måtte være lydtekniker."
@@ -103,7 +97,7 @@ export default function Course() {
             Tilbake til forsiden
           </Link>
           <p className="text-copper-light text-sm font-medium tracking-[0.2em] uppercase mb-4">
-            Mikrokurs for kirketjenere
+            Grunnleggende kurs for kirketjenere
           </p>
           <h1 className="font-serif text-4xl sm:text-5xl lg:text-7xl text-cream mb-7 leading-tight">
             Trygg lyd
@@ -124,7 +118,7 @@ export default function Course() {
             </a>
           </div>
           <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 text-sm text-cream/50">
-            <span className="inline-flex items-center gap-2"><Clock3 size={16} className="text-copper-light" />45–50 minutter</span>
+            <span className="inline-flex items-center gap-2"><Clock3 size={16} className="text-copper-light" />4 timer</span>
             <span className="inline-flex items-center gap-2"><Users size={16} className="text-copper-light" />Ansatte, vikarer og frivillige</span>
             <span className="inline-flex items-center gap-2"><MapPin size={16} className="text-copper-light" />Kan tilpasses hver kirke</span>
           </div>
@@ -153,7 +147,7 @@ export default function Course() {
                     <div className="w-11 h-11 rounded-xl bg-copper/10 flex items-center justify-center">
                       <Icon size={20} className="text-copper-light" />
                     </div>
-                    <span className="text-copper-light/60 text-xs tracking-wider">{module.number} · {module.duration}</span>
+                    <span className="text-copper-light/60 text-xs tracking-wider">{module.number}</span>
                   </div>
                   <h3 className="font-serif text-xl text-cream mb-3">{module.title}</h3>
                   <p className="text-cream/50 text-sm leading-relaxed">{module.description}</p>
@@ -163,7 +157,7 @@ export default function Course() {
           </div>
 
           <p className="text-cream/40 text-sm mt-6">
-            Kurset avsluttes med en fem minutters kunnskapstest med praktiske situasjoner.
+            Kurset avsluttes med en kort kunnskapstest med praktiske situasjoner.
           </p>
         </div>
       </section>

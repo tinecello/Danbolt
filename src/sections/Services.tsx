@@ -19,7 +19,7 @@ const services: Service[] = [
   { icon: ShieldCheck, title: 'Kvalitetssikring og kontrollmåling', description: 'Verifiser at dere fikk det dere betalte for – kontrollmålinger, testing, tuning og verifikasjon av leveransen.', details: ['Installasjonskontroll', 'Funksjonstesting', 'Optimalisering', 'Dokumentasjon'] },
   { icon: Accessibility, title: 'Universell utforming og teleslynge', description: 'Måling av hørselshjelpemidler mot gjeldende krav, slik at rommet er tilgjengelig for alle brukere.', details: ['Teleslyngemåling', 'Krav til universell utforming', 'NS 8175', 'Dokumentasjon av avvik'] },
   { icon: GraduationCap, title: 'Optimalisering av eksisterende anlegg', description: 'Kanskje det ikke må byttes, bare justeres. Praktisk opplæring, dokumentasjon og rådgivning om bruk, drift og videre oppfølging.', details: ['Brukeropplæring', 'Driftsdokumentasjon', 'Vedlikeholdsrutiner', 'Oppfølging'] },
-  { icon: CirclePlay, title: 'Trygg lyd i kirken', description: 'Praktisk mikrokurs for kirketjenere, vikarer og frivillige – uten krav om lydteknisk bakgrunn.', details: ['Mikrofonbruk', 'Trygg normaldrift', 'Feilsøking', 'Lokal veiledning'], href: '/kurs/trygg-lyd-i-kirken' },
+  { icon: CirclePlay, title: 'Trygg lyd i kirken', description: 'Praktisk grunnleggende kurs for kirketjenere, vikarer og frivillige – uten krav om lydteknisk bakgrunn.', details: ['Mikrofonbruk', 'Trygg normaldrift', 'Feilsøking', 'Lokal veiledning'], href: '/kurs/trygg-lyd-i-kirken' },
 ]
 
 export default function Services() {
