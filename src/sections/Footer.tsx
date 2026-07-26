@@ -97,7 +97,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="mt-12 pt-8 border-t border-cream/5 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-cream/20 text-xs">
-            &copy; {new Date().getFullYear()} Danbolt DA. Alle rettigheter reservert.
+            &copy; Danbolt DA. Alle rettigheter reservert.
           </p>
           <p className="text-cream/20 text-xs">
             Uavhengig teknisk rådgiver innen lyd, bilde og romakustikk.
