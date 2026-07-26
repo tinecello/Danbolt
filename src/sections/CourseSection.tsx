@@ -24,7 +24,7 @@ export default function CourseSection() {
               <span className="text-gradient-copper">i kirken</span>
             </h2>
             <p className="text-cream/60 text-base lg:text-lg leading-relaxed mb-8 max-w-2xl">
-              Et praktisk mikrokurs for kirketjenere, vikarer og frivillige.
+              Et praktisk grunnleggende kurs for kirketjenere, vikarer og frivillige.
               Deltakerne lærer en enkel arbeidsmåte som fungerer på tvers av
               ulike lydanlegg – uten å måtte bli lydteknikere.
             </p>
@@ -32,7 +32,7 @@ export default function CourseSection() {
             <div className="grid sm:grid-cols-2 gap-4 mb-9">
               <div className="flex items-center gap-3 text-cream/60">
                 <Clock3 size={18} className="text-copper-light flex-shrink-0" />
-                <span className="text-sm">45–50 minutter</span>
+                <span className="text-sm">4 timer</span>
               </div>
               <div className="flex items-center gap-3 text-cream/60">
                 <Users size={18} className="text-copper-light flex-shrink-0" />
