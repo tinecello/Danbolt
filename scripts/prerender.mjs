@@ -15,6 +15,7 @@ const routes = [
   '/blogg/absorpsjon-vs-diffusjon',
   '/blogg/taletydelighet-sti',
   '/blogg/ns8175-etterklangskrav',
+  '/kurs/trygg-lyd-i-kirken',
 ]
 
 for (const route of routes) {

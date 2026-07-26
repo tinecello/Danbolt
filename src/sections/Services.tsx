@@ -1,7 +1,16 @@
 import { useState, useEffect, useRef } from 'react'
-import { Mic, Waves, Lightbulb, Settings, ShieldCheck, ClipboardCheck, GraduationCap, Accessibility, ArrowRight, Phone } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import { Mic, Waves, Lightbulb, Settings, ShieldCheck, ClipboardCheck, GraduationCap, Accessibility, ArrowRight, Phone, CirclePlay } from 'lucide-react'
 
-const services = [
+type Service = {
+  icon: typeof Mic
+  title: string
+  description: string
+  details: string[]
+  href?: string
+}
+
+const services: Service[] = [
   { icon: Mic, title: 'Akustiske målinger og kartlegging', description: 'Vi kartlegger hva rommet faktisk gjør med lyden – etterklangstid, taletydelighet, bakgrunnsstøy og brukeropplevelse. Grunnlaget for alle beslutninger.', details: ['Etterklangstidsmålinger', 'Taletydelighetsmåling (STI)', 'Frekvensanalyse', 'Støymåling'] },
   { icon: Waves, title: 'Romakustisk vurdering og tiltaksplan', description: 'Alle rom har akustiske kvaliteter og utfordringer. Jeg beregner hva rommet trenger av akustisk tilpasning til den bruken rommet skal ha – og gir dere grunnlaget for å velge riktig løsning og riktig leverandør.', details: ['Etterklangsberegning mot NS 8175', 'Tiltaksplan med mengder og plassering', 'Leverandøruavhengig kravspesifikasjon', 'Kontrollmåling før og etter'] },
   { icon: Lightbulb, title: 'Uavhengig rådgivning', description: 'Uhildet vurdering, ikke salg. Mine anbefalinger er basert på rommets egenskaper – ikke leverandørens sortiment. Det betyr at dere aldri betaler for komponenter dere ikke trenger.', details: ['Behovsanalyse', 'Løsningsforslag', 'Tekniske vurderinger', 'Kostnadsestimat'] },
@@ -10,7 +19,8 @@ const services = [
   { icon: ShieldCheck, title: 'Kvalitetssikring og kontrollmåling', description: 'Verifiser at dere fikk det dere betalte for – kontrollmålinger, testing, tuning og verifikasjon av leveransen.', details: ['Installasjonskontroll', 'Funksjonstesting', 'Optimalisering', 'Dokumentasjon'] },
   { icon: Accessibility, title: 'Universell utforming og teleslynge', description: 'Måling av hørselshjelpemidler mot gjeldende krav, slik at rommet er tilgjengelig for alle brukere.', details: ['Teleslyngemåling', 'Krav til universell utforming', 'NS 8175', 'Dokumentasjon av avvik'] },
   { icon: GraduationCap, title: 'Optimalisering av eksisterende anlegg', description: 'Kanskje det ikke må byttes, bare justeres. Praktisk opplæring, dokumentasjon og rådgivning om bruk, drift og videre oppfølging.', details: ['Brukeropplæring', 'Driftsdokumentasjon', 'Vedlikeholdsrutiner', 'Oppfølging'] },
-  ]
+  { icon: CirclePlay, title: 'Trygg lyd i kirken', description: 'Praktisk mikrokurs for kirketjenere, vikarer og frivillige – uten krav om lydteknisk bakgrunn.', details: ['Mikrofonbruk', 'Trygg normaldrift', 'Feilsøking', 'Lokal veiledning'], href: '/kurs/trygg-lyd-i-kirken' },
+]
 
 export default function Services() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null)
@@ -32,7 +42,7 @@ export default function Services() {
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-cream mb-6">Tjenester tilpasset dine behov</h2>
           <p className="text-cream/50 text-base lg:text-lg max-w-2xl mx-auto">Fra historiske kirker til hypermoderne konferansesenter. Jeg tilpasser alltid løsningen til rommet og brukeren.</p>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
           {services.map((service, i) => {
             const Icon = service.icon
             const isActive = activeIndex === i
@@ -49,6 +59,16 @@ export default function Services() {
                 <div className={`grid transition-all duration-400 ${isActive ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
                   <div className="overflow-hidden min-h-0 pt-4 border-t border-copper/10 space-y-2">
                     {service.details.map(d => <div key={d} className="flex items-center gap-2 text-sm"><div className="w-1.5 h-1.5 rounded-full bg-copper/60 flex-shrink-0" /><span className="text-cream/60">{d}</span></div>)}
+                    {service.href && (
+                      <Link
+                        to={service.href}
+                        onClick={(e) => e.stopPropagation()}
+                        className="inline-flex items-center gap-2 pt-3 text-sm font-medium text-copper-light hover:text-cream transition-colors"
+                      >
+                        Se kurset
+                        <ArrowRight size={14} />
+                      </Link>
+                    )}
                   </div>
                 </div>
                 <div className={`absolute bottom-6 right-6 transition-all duration-300 ${isActive ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-2'}`}><ArrowRight size={16} className="text-copper-light" /></div>

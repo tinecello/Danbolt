@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
-import { BookOpen, CheckCircle2, ArrowRight, Download } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import { BookOpen, CheckCircle2, ArrowRight, GraduationCap } from 'lucide-react'
 
 const highlights = [
   'Forstå rommets akustikk før du kjøper utstyr',
@@ -45,9 +46,9 @@ export default function BookSection() {
               Fagbok
             </p>
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-cream mb-6 leading-tight">
-              Lydanlegg
+              Lyd
               <br />
-              <span className="text-gradient-copper">i kirkene</span>
+              <span className="text-gradient-copper">i kirken</span>
             </h2>
 
             <p className="text-cream/60 text-base lg:text-lg leading-relaxed mb-4">
@@ -58,7 +59,7 @@ export default function BookSection() {
             </p>
 
             <p className="text-cream/40 text-sm leading-relaxed mb-8 italic">
-              "Hvorfor skrev jeg denne boken? Fordom godt lydanlegg starter med
+              "Hvorfor skrev jeg denne boken? For god lyd starter med
               forståelsen av rommet — ikke med spesifikasjonene til leverandøren."
             </p>
 
@@ -78,11 +79,7 @@ export default function BookSection() {
             {/* CTA buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="#kontakt"
-                onClick={(e) => {
-                  e.preventDefault()
-                  document.querySelector('#kontakt')?.scrollIntoView({ behavior: 'smooth' })
-                }}
+                href="mailto:thorbjorn@danbolt.no?subject=Bestilling%20av%20fagboken%20Lyd%20i%20kirken"
                 className="group inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-copper/20 text-copper-light border border-copper/40 rounded-full font-medium hover:bg-copper/30 hover:border-copper transition-all duration-300"
               >
                 <BookOpen size={16} />
@@ -92,17 +89,13 @@ export default function BookSection() {
                   className="group-hover:translate-x-1 transition-transform"
                 />
               </a>
-              <a
-                href="#kontakt"
-                onClick={(e) => {
-                  e.preventDefault()
-                  document.querySelector('#kontakt')?.scrollIntoView({ behavior: 'smooth' })
-                }}
+              <Link
+                to="/kurs/trygg-lyd-i-kirken"
                 className="group inline-flex items-center justify-center gap-2 px-6 py-3.5 text-cream/60 border border-cream/15 rounded-full font-medium hover:text-cream hover:border-cream/30 transition-all duration-300"
               >
-                <Download size={16} />
-                Les utdrag
-              </a>
+                <GraduationCap size={16} />
+                Se mikrokurset
+              </Link>
             </div>
           </div>
 
@@ -134,9 +127,9 @@ export default function BookSection() {
                   </p>
 
                   <h3 className="font-serif text-2xl lg:text-3xl text-cream mb-2 leading-snug">
-                    Lydanlegg
+                    Lyd
                     <br />
-                    i kirkene
+                    i kirken
                   </h3>
 
                   <div className="w-12 h-px bg-copper/30 my-4" />

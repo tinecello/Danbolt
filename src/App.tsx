@@ -9,10 +9,12 @@ import Services from './sections/Services'
 import Process from './sections/Process'
 import About from './sections/About'
 import BookSection from './sections/BookSection'
+import CourseSection from './sections/CourseSection'
 import References from './sections/References'
 import Contact from './sections/Contact'
 import Blogg from './pages/Blogg'
 import BloggPost from './pages/BloggPost'
+import Course from './pages/Course'
 import Footer from './sections/Footer'
 
 // Videresender gamle HashRouter-adresser (danbolt.no/#/blogg/...) til de nye
@@ -65,6 +67,7 @@ function Forside() {
         <Process />
         <About />
         <BookSection />
+        <CourseSection />
         <References />
         <Contact />
       </main>
@@ -93,6 +96,16 @@ function BloggPostLayout() {
   )
 }
 
+function CourseLayout() {
+  return (
+    <div className="relative min-h-screen bg-dark text-cream overflow-x-hidden">
+      <Navigation scrolled={true} />
+      <Course />
+      <Footer />
+    </div>
+  )
+}
+
 export function SiteRoutes() {
   return (
     <>
@@ -101,6 +114,7 @@ export function SiteRoutes() {
         <Route path="/" element={<Forside />} />
         <Route path="/blogg" element={<BloggLayout />} />
         <Route path="/blogg/:slug" element={<BloggPostLayout />} />
+        <Route path="/kurs/trygg-lyd-i-kirken" element={<CourseLayout />} />
         {/* Ukjente adresser sendes til forsiden i stedet for å gi blank side */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
