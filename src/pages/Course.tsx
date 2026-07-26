@@ -89,13 +89,22 @@ export default function Course() {
       <section className="relative pt-32 lg:pt-40 pb-24 lg:pb-32 overflow-hidden">
         <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[760px] h-[760px] bg-copper/[0.04] rounded-full blur-3xl pointer-events-none" />
         <div className="relative max-w-5xl mx-auto px-6 lg:px-8 text-center">
-          <Link
-            to="/"
-            className="inline-flex items-center gap-2 text-sm text-cream/50 hover:text-copper-light transition-colors mb-10"
-          >
-            <ArrowLeft size={15} />
-            Tilbake til forsiden
-          </Link>
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 mb-10">
+            <Link
+              to="/"
+              className="inline-flex items-center gap-2 text-sm text-cream/50 hover:text-copper-light transition-colors"
+            >
+              <ArrowLeft size={15} />
+              Tilbake til forsiden
+            </Link>
+            <Link
+              to="/lyd-i-kirken"
+              className="inline-flex items-center gap-2 text-sm text-copper-light hover:text-cream transition-colors"
+            >
+              Se helheten for lyd i kirken
+              <ArrowRight size={15} />
+            </Link>
+          </div>
           <p className="text-copper-light text-sm font-medium tracking-[0.2em] uppercase mb-4">
             Grunnleggende kurs for kirketjenere
           </p>

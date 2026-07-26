@@ -5,6 +5,7 @@ import Navigation from './sections/Navigation'
 import Hero from './sections/Hero'
 import Philosophy from './sections/Philosophy'
 import AcousticViz from './sections/AcousticViz'
+import ChurchSection from './sections/ChurchSection'
 import Services from './sections/Services'
 import Process from './sections/Process'
 import About from './sections/About'
@@ -15,6 +16,7 @@ import Contact from './sections/Contact'
 import Blogg from './pages/Blogg'
 import BloggPost from './pages/BloggPost'
 import Course from './pages/Course'
+import Church from './pages/Church'
 import Footer from './sections/Footer'
 
 // Videresender gamle HashRouter-adresser (danbolt.no/#/blogg/...) til de nye
@@ -63,6 +65,7 @@ function Forside() {
         <Hero />
         <Philosophy />
         <AcousticViz />
+        <ChurchSection />
         <Services />
         <Process />
         <About />
@@ -106,6 +109,16 @@ function CourseLayout() {
   )
 }
 
+function ChurchLayout() {
+  return (
+    <div className="relative min-h-screen bg-dark text-cream overflow-x-hidden">
+      <Navigation scrolled={true} />
+      <Church />
+      <Footer />
+    </div>
+  )
+}
+
 export function SiteRoutes() {
   return (
     <>
@@ -114,6 +127,7 @@ export function SiteRoutes() {
         <Route path="/" element={<Forside />} />
         <Route path="/blogg" element={<BloggLayout />} />
         <Route path="/blogg/:slug" element={<BloggPostLayout />} />
+        <Route path="/lyd-i-kirken" element={<ChurchLayout />} />
         <Route path="/kurs/trygg-lyd-i-kirken" element={<CourseLayout />} />
         {/* Ukjente adresser sendes til forsiden i stedet for å gi blank side */}
         <Route path="*" element={<Navigate to="/" replace />} />

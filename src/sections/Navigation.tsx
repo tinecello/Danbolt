@@ -6,9 +6,11 @@ const forsideLinks = [
   { label: 'Hjem', href: '#hjem' },
   { label: 'Om', href: '#om' },
   { label: 'Tjenester', href: '#tjenester' },
+]
+
+const forsideLinksEtterKirker = [
   { label: 'Prosjektering', href: '#prosjektering' },
   { label: 'Referanser', href: '#referanser' },
-  { label: 'Kontakt', href: '#kontakt' },
 ]
 
 export default function Navigation({ scrolled }: { scrolled: boolean }) {
@@ -43,14 +45,24 @@ export default function Navigation({ scrolled }: { scrolled: boolean }) {
             {!erForside && (
               <Link to="/" className="text-sm font-medium text-cream/70 hover:text-copper-light transition-colors duration-300 tracking-wide">Hjem</Link>
             )}
+            <Link to="/lyd-i-kirken"
+              className={`text-sm font-medium transition-colors duration-300 tracking-wide ${location.pathname === '/lyd-i-kirken' ? 'text-copper-light' : 'text-cream/70 hover:text-copper-light'}`}>
+              Kirker
+            </Link>
+            {erForside && forsideLinksEtterKirker.map(link => (
+              <a key={link.href} href={link.href} onClick={(e) => handleForsideClick(e, link.href)}
+                className="text-sm font-medium text-cream/70 hover:text-copper-light transition-colors duration-300 tracking-wide">
+                {link.label}
+              </a>
+            ))}
             <Link to="/blogg"
               className={`text-sm font-medium transition-colors duration-300 tracking-wide ${location.pathname.startsWith('/blogg') ? 'text-copper-light' : 'text-cream/70 hover:text-copper-light'}`}>
               Blogg
             </Link>
-            <Link to="/" onClick={(e) => { if (erForside) handleForsideClick(e, '#kontakt') }}
+            <a href={erForside ? '#kontakt' : '/#kontakt'} onClick={(e) => { if (erForside) handleForsideClick(e, '#kontakt') }}
               className="px-5 py-2 text-sm font-medium bg-copper/15 text-copper-light border border-copper/30 rounded-full hover:bg-copper/25 hover:border-copper/50 transition-all duration-300">
               Kontakt meg
-            </Link>
+            </a>
           </div>
 
           <button onClick={() => setMenuOpen(!menuOpen)} className="lg:hidden p-2 text-cream/70 hover:text-copper-light transition-colors" aria-label="Åpne meny">
@@ -69,9 +81,18 @@ export default function Navigation({ scrolled }: { scrolled: boolean }) {
           )) : (
             <Link to="/" onClick={() => setMenuOpen(false)} className="block py-3 text-cream/70 hover:text-copper-light transition-colors border-b border-white/5">Hjem</Link>
           )}
+          <Link to="/lyd-i-kirken" onClick={() => setMenuOpen(false)}
+            className={`block py-3 transition-colors border-b border-white/5 ${location.pathname === '/lyd-i-kirken' ? 'text-copper-light' : 'text-cream/70 hover:text-copper-light'}`}>
+            Kirker
+          </Link>
+          {erForside && forsideLinksEtterKirker.map(link => (
+            <a key={link.href} href={link.href} onClick={(e) => handleForsideClick(e, link.href)}
+              className="block py-3 text-cream/70 hover:text-copper-light transition-colors border-b border-white/5">{link.label}</a>
+          ))}
           <Link to="/blogg" onClick={() => setMenuOpen(false)}
             className={`block py-3 transition-colors border-b border-white/5 ${location.pathname.startsWith('/blogg') ? 'text-copper-light' : 'text-cream/70 hover:text-copper-light'}`}>Blogg</Link>
-          <Link to="/" className="block mt-4 px-5 py-3 text-center text-sm font-medium bg-copper/15 text-copper-light border border-copper/30 rounded-full">Kontakt meg</Link>
+          <a href={erForside ? '#kontakt' : '/#kontakt'} onClick={() => setMenuOpen(false)}
+            className="block mt-4 px-5 py-3 text-center text-sm font-medium bg-copper/15 text-copper-light border border-copper/30 rounded-full">Kontakt meg</a>
         </div>
       </div>
     </nav>
