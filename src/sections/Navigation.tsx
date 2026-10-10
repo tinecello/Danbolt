@@ -49,6 +49,10 @@ export default function Navigation({ scrolled }: { scrolled: boolean }) {
               className={`text-sm font-medium transition-colors duration-300 tracking-wide ${location.pathname === '/lyd-i-kirken' ? 'text-copper-light' : 'text-cream/70 hover:text-copper-light'}`}>
               Kirker
             </Link>
+            <Link to="/kirkelydpakken"
+              className={`text-sm font-medium transition-colors duration-300 tracking-wide ${location.pathname === '/kirkelydpakken' || location.pathname === '/kartlegging' ? 'text-copper-light' : 'text-cream/70 hover:text-copper-light'}`}>
+              Kirkelydpakken
+            </Link>
             {erForside && forsideLinksEtterKirker.map(link => (
               <a key={link.href} href={link.href} onClick={(e) => handleForsideClick(e, link.href)}
                 className="text-sm font-medium text-cream/70 hover:text-copper-light transition-colors duration-300 tracking-wide">
@@ -84,6 +88,10 @@ export default function Navigation({ scrolled }: { scrolled: boolean }) {
           <Link to="/lyd-i-kirken" onClick={() => setMenuOpen(false)}
             className={`block py-3 transition-colors border-b border-white/5 ${location.pathname === '/lyd-i-kirken' ? 'text-copper-light' : 'text-cream/70 hover:text-copper-light'}`}>
             Kirker
+          </Link>
+          <Link to="/kirkelydpakken" onClick={() => setMenuOpen(false)}
+            className={`block py-3 transition-colors border-b border-white/5 ${location.pathname === '/kirkelydpakken' || location.pathname === '/kartlegging' ? 'text-copper-light' : 'text-cream/70 hover:text-copper-light'}`}>
+            Kirkelydpakken
           </Link>
           {erForside && forsideLinksEtterKirker.map(link => (
             <a key={link.href} href={link.href} onClick={(e) => handleForsideClick(e, link.href)}

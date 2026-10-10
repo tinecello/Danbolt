@@ -3,7 +3,7 @@ import { Search, PenTool, Sliders, ClipboardList, CheckCircle, ArrowRight, Phone
 
 const steps = [
   { icon: Search, title: 'Behovsanalyse', description: 'Jeg kartlegger rommets bruksmønster, brukergruppe og akustiske utfordringer. Hva skal rommet brukes til? Hvem skal bruke det?' },
-  { icon: PenTool, title: 'Akustisk Vurdering', description: 'Grundige akustiske målinger og analyse av rommets egenskaper. Etterklangstid, taletydelighet, støy og frekvensrespons.' },
+  { icon: PenTool, title: 'Akustisk Vurdering', description: 'Akustiske målinger på stedet – eller fjernvurdering ut fra bilder, plantegning og lydopptak når befaring ikke er nødvendig. Etterklangstid, taletydelighet, støy og frekvensrespons.' },
   { icon: Sliders, title: 'Systemdesign', description: 'Prosjektering av lydanlegg tilpasset rommets akustikk. Høyttalerplassering, signalveier, og integrasjon med eksisterende systemer.' },
   { icon: ClipboardList, title: 'Anbudsdokument', description: 'Leverandøruavhengig kravspesifikasjon og teknisk beskrivelse som sikrer riktig innkjøp til riktig pris.' },
   { icon: CheckCircle, title: 'Kvalitetssikring', description: 'Kontrollmålinger, testing og verifisering av at det leverte systemet møter spesifikasjonen og fungerer i praksis.' },

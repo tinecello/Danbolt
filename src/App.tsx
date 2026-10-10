@@ -17,6 +17,8 @@ import Blogg from './pages/Blogg'
 import BloggPost from './pages/BloggPost'
 import Course from './pages/Course'
 import Church from './pages/Church'
+import Kirkelydpakken from './pages/Kirkelydpakken'
+import Kartlegging from './pages/Kartlegging'
 import Footer from './sections/Footer'
 
 // Videresender gamle HashRouter-adresser (danbolt.no/#/blogg/...) til de nye
@@ -119,6 +121,26 @@ function ChurchLayout() {
   )
 }
 
+function KirkelydpakkenLayout() {
+  return (
+    <div className="relative min-h-screen bg-dark text-cream overflow-x-hidden">
+      <Navigation scrolled={true} />
+      <Kirkelydpakken />
+      <Footer />
+    </div>
+  )
+}
+
+function KartleggingLayout() {
+  return (
+    <div className="relative min-h-screen bg-dark text-cream overflow-x-hidden">
+      <Navigation scrolled={true} />
+      <Kartlegging />
+      <Footer />
+    </div>
+  )
+}
+
 export function SiteRoutes() {
   return (
     <>
@@ -129,6 +151,8 @@ export function SiteRoutes() {
         <Route path="/blogg/:slug" element={<BloggPostLayout />} />
         <Route path="/lyd-i-kirken" element={<ChurchLayout />} />
         <Route path="/kurs/trygg-lyd-i-kirken" element={<CourseLayout />} />
+        <Route path="/kirkelydpakken" element={<KirkelydpakkenLayout />} />
+        <Route path="/kartlegging" element={<KartleggingLayout />} />
         {/* Ukjente adresser sendes til forsiden i stedet for å gi blank side */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>

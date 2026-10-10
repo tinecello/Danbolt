@@ -6,6 +6,7 @@ const navLinks = [
   { label: 'Om meg', href: '/#om' },
   { label: 'Tjenester', href: '/#tjenester' },
   { label: 'Kirker', href: '/lyd-i-kirken', route: true },
+  { label: 'Kirkelydpakken', href: '/kirkelydpakken', route: true },
   { label: 'Prosjektering', href: '/#prosjektering' },
   { label: 'Referanser', href: '/#referanser' },
   { label: 'Kontakt', href: '/#kontakt' },

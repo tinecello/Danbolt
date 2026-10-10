@@ -22,6 +22,7 @@ import {
   MapPinCheck,
   MonitorCheck,
   Network,
+  Package,
   PanelsTopLeft,
   PencilRuler,
   PhoneOff,
@@ -458,6 +459,31 @@ export default function Church() {
               Befaring der bygget krever det
             </span>
           </div>
+        </div>
+      </section>
+
+      <section className="py-20 lg:py-24 bg-dark border-t border-copper/25">
+        <div className="max-w-6xl mx-auto px-6 lg:px-8 grid lg:grid-cols-[auto_1fr_auto] gap-8 items-center">
+          <div className="w-14 h-14 flex items-center justify-center text-copper-light border-y border-copper/30">
+            <Package size={25} />
+          </div>
+          <div>
+            <p className="text-copper-light text-sm font-medium tracking-[0.16em] uppercase mb-3">
+              Ferdig levert til kirken
+            </p>
+            <h2 className="font-serif text-3xl text-cream mb-3">Kirkelydpakken</h2>
+            <p className="text-cream/50">
+              Felles betjening i praksis: lydprosessor og betjeningsnettbrett, koblet,
+              programmert og testet før levering. Fra kr 60 000 eks. mva.
+            </p>
+          </div>
+          <Link
+            to="/kirkelydpakken"
+            className="group inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-copper/20 text-copper-light border border-copper/40 rounded-full font-medium hover:bg-copper/30 hover:border-copper transition-all"
+          >
+            Se pakken
+            <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
+          </Link>
         </div>
       </section>
 

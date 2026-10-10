@@ -8,8 +8,8 @@ import {
   Equal,
   Landmark,
   MonitorCheck,
+  Package,
   RadioTower,
-  ShieldCheck,
   SlidersHorizontal,
   Speaker,
   UserRoundCheck,
@@ -44,7 +44,9 @@ export default function ChurchSection() {
             </p>
             <p className="text-cream/45 text-sm leading-relaxed mb-9 max-w-xl">
               Danbolt hjelper kirkelige fellesråd med å utvikle lokale
-              lydløsninger innenfor en felles og gjenkjennelig driftsmodell.
+              lydløsninger innenfor en felles og gjenkjennelig driftsmodell. Med
+              Kirkelydpakken leveres anlegget ferdig koblet, programmert og
+              testet – og monteres av lokal elektriker.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -56,11 +58,11 @@ export default function ChurchSection() {
                 <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
-                to="/kurs/trygg-lyd-i-kirken"
+                to="/kirkelydpakken"
                 className="inline-flex items-center justify-center gap-2 px-7 py-3.5 text-cream/70 border border-cream/15 rounded-full font-medium hover:text-cream hover:border-cream/30 transition-all duration-300"
               >
-                <ShieldCheck size={16} />
-                Se grunnkurset
+                <Package size={16} />
+                Se Kirkelydpakken
               </Link>
             </div>
           </div>

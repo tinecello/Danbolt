@@ -38,7 +38,7 @@ export default function About() {
             <div className="space-y-5 text-cream/60 text-base leading-relaxed mb-8">
               <p>Gjennom mer enn 30 år har jeg arbeidet med lyd, akustikkløsninger for kirker, skoler, kulturhus, auditorier, konferansesentre, møterom og andre akustisk krevende rom.</p>
               <p>Min erfaring spenner fra liveproduksjon, akustiske målinger og praktiske installasjoner til prosjektering, systemdesign, anbudsprosesser, kvalitetssikring og optimalisering av komplette lyd- og AV-løsninger.</p>
-              <p>Som <strong className="text-cream">uavhengig fagkonsulent</strong> representerer jeg ikke produsenter eller leverandører. Mine anbefalinger er basert på rommets egenskaper, brukernes behov og prosjektets målsettinger.</p>
+              <p>Som <strong className="text-cream">produsentuavhengig fagkonsulent</strong> velger jeg utstyr ut fra rommet – ikke ut fra avtaler med merker eller forhandlere. Mine anbefalinger er basert på rommets egenskaper, brukernes behov og prosjektets målsettinger.</p>
               <p className="text-cream/70 italic">Målet er alltid det samme: Å skape rom hvor mennesker kan høre, forstå og bruke stemmen sin uten unødig belastning.</p>
             </div>
             {/* Book CTA */}

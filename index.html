@@ -54,6 +54,46 @@
         </script>
     </head>
   <body>
+        <!-- Skjult kopi av kartleggingsskjemaet, slik at Netlify Forms finner feltene ved publisering.
+             Feltnavnene må stemme med src/pages/Kartlegging.tsx. -->
+        <form name="kartlegging" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data" hidden>
+          <input type="text" name="bot-field" />
+          <input type="text" name="kirke" />
+          <input type="text" name="sted" />
+          <input type="text" name="menighet" />
+          <input type="text" name="kontaktperson" />
+          <input type="text" name="rolle" />
+          <input type="text" name="epost" />
+          <input type="text" name="telefon" />
+          <input type="text" name="sitteplasser" />
+          <input type="text" name="galleri" />
+          <input type="text" name="kirketype" />
+          <input type="text" name="bruk" />
+          <input type="text" name="betjenes_av" />
+          <input type="text" name="storste_problem" />
+          <input type="text" name="tidsplan" />
+          <input type="text" name="mikser_forsterker" />
+          <input type="text" name="hoyttalere_status" />
+          <input type="text" name="teleslynge" />
+          <input type="text" name="tradlose_mikrofoner" />
+          <input type="text" name="kablede_mikrofoner" />
+          <input type="text" name="musikkavspilling" />
+          <input type="text" name="annet_utstyr" />
+          <input type="text" name="lengde" />
+          <input type="text" name="bredde" />
+          <input type="text" name="takhoyde" />
+          <input type="text" name="kommentar" />
+          <input type="file" name="bilde_rack" />
+          <input type="file" name="bilde_mikrofoner" />
+          <input type="file" name="bilde_hoyttalere" />
+          <input type="file" name="bilde_fra_alter" />
+          <input type="file" name="bilde_fra_galleri" />
+          <input type="file" name="bilde_strom" />
+          <input type="file" name="ekstra_bilde_1" />
+          <input type="file" name="ekstra_bilde_2" />
+          <input type="file" name="plantegning" />
+          <input type="file" name="lydopptak" />
+        </form>
         <div id="root"></div>
         <script type="module" src="/src/main.tsx"></script>
   </body>

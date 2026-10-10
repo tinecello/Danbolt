@@ -17,6 +17,8 @@ const routes = [
   '/blogg/ns8175-etterklangskrav',
   '/lyd-i-kirken',
   '/kurs/trygg-lyd-i-kirken',
+  '/kirkelydpakken',
+  '/kartlegging',
 ]
 
 for (const route of routes) {
