@@ -41,11 +41,33 @@ type Leveranse = {
 
 const leveranser: Leveranse[] = []
 
-const modes = [
-  { id: 'gudstjeneste', label: 'Gudstjeneste', detail: 'Prekestol, lesepult og trådløse mikrofoner på. Musikk og teleslynge klar.' },
-  { id: 'begravelse', label: 'Begravelse', detail: 'Tale og musikkavspilling, rolig nivå. Teleslynge på.' },
-  { id: 'konsert', label: 'Konsert', detail: 'Mer fylde i musikken, trådløse mikrofoner for presentasjon.' },
-  { id: 'av', label: 'Av', detail: 'Alt slås av i riktig rekkefølge. Klart til neste gang.' },
+const kilder = ['Prekestol', 'Lesepult', 'Trådløs mikrofon', 'Musikk', 'Teleslynge']
+
+const modes: { id: string; label: string; detail: string; pa: string[] }[] = [
+  {
+    id: 'gudstjeneste',
+    label: 'Gudstjeneste',
+    detail: 'Én knapp setter opp hele gudstjenesten. Mikrofoner, musikk og teleslynge er klare med riktig lydnivå.',
+    pa: ['Prekestol', 'Lesepult', 'Trådløs mikrofon', 'Musikk', 'Teleslynge'],
+  },
+  {
+    id: 'begravelse',
+    label: 'Begravelse',
+    detail: 'Tale og musikkavspilling med et roligere lydnivå. Teleslyngen er på for hørselshemmede.',
+    pa: ['Lesepult', 'Trådløs mikrofon', 'Musikk', 'Teleslynge'],
+  },
+  {
+    id: 'konsert',
+    label: 'Konsert',
+    detail: 'Mer fylde i musikken. Trådløs mikrofon til presentasjon mellom innslagene.',
+    pa: ['Trådløs mikrofon', 'Musikk', 'Teleslynge'],
+  },
+  {
+    id: 'av',
+    label: 'Av',
+    detail: 'Alt slås av i riktig rekkefølge, og anlegget er klart til neste gang.',
+    pa: [],
+  },
 ]
 
 const promises = [
@@ -56,7 +78,7 @@ const promises = [
 ]
 
 const kjernen = [
-  'Profesjonell lydprosessor (Allen & Heath AHM-16)',
+  'Profesjonell lydprosessor',
   'Veggmontert betjeningsnettbrett med faste knapper',
   'Programmering tilpasset kirkens rom og bruk',
   'Kabler, kontakter og tydelig merking',
@@ -118,18 +140,16 @@ function Nettbrett() {
 
   return (
     <div className="relative">
+      <div className="text-center mb-6">
+        <p className="text-copper-light text-xs font-medium tracking-[0.16em] uppercase mb-2">Slik betjenes anlegget</p>
+        <p className="text-cream/55 text-sm">Prøv selv: trykk på en anledning på nettbrettet</p>
+      </div>
       <div className="mx-auto max-w-sm rounded-[2rem] border border-cream/15 bg-dark-card p-4 shadow-glow">
         <div className="rounded-[1.4rem] border border-cream/10 bg-dark p-5">
-          <div className="flex items-center justify-between mb-5 text-xs text-cream/40">
-            <span className="inline-flex items-center gap-1.5">
-              <MonitorCheck size={14} className="text-copper-light" />
-              Kirkens lydanlegg
-            </span>
-            <span className="inline-flex items-center gap-1.5">
-              <span className={`w-1.5 h-1.5 rounded-full ${active === 'av' ? 'bg-cream/30' : 'bg-emerald-400'}`} />
-              {active === 'av' ? 'Av' : 'På'}
-            </span>
-          </div>
+          <p className="text-xs text-cream/40 mb-4 inline-flex items-center gap-1.5">
+            <MonitorCheck size={14} className="text-copper-light" />
+            Betjeningsnettbrett på veggen
+          </p>
           <div className="grid grid-cols-2 gap-3" role="group" aria-label="Velg anledning">
             {modes.map((mode) => (
               <button
@@ -137,32 +157,36 @@ function Nettbrett() {
                 type="button"
                 aria-pressed={active === mode.id}
                 onClick={() => setActive(mode.id)}
-                className={`min-h-20 rounded-xl border px-3 text-sm font-medium transition-all inline-flex flex-col items-center justify-center gap-1.5 ${
+                className={`min-h-16 rounded-xl border px-3 text-sm font-medium transition-all inline-flex items-center justify-center gap-2 ${
                   active === mode.id
                     ? 'bg-copper/20 border-copper/60 text-copper-light'
                     : 'border-cream/10 text-cream/60 hover:text-cream hover:border-cream/25'
                 }`}
               >
-                {mode.id === 'av' ? <Power size={18} /> : <AudioLines size={18} />}
+                {mode.id === 'av' ? <Power size={16} /> : <AudioLines size={16} />}
                 {mode.label}
               </button>
             ))}
           </div>
-          <div className="mt-5 pt-4 border-t border-cream/10">
-            <div className="flex items-center justify-between text-xs text-cream/40 mb-2">
-              <span>Talevolum</span>
-              <span>{active === 'av' ? '–' : active === 'konsert' ? '65 %' : '75 %'}</span>
-            </div>
-            <div className="h-1.5 rounded-full bg-cream/10 overflow-hidden">
-              <div
-                className="h-full bg-copper transition-all duration-500"
-                style={{ width: active === 'av' ? '0%' : active === 'konsert' ? '65%' : '75%' }}
-              />
-            </div>
-          </div>
+          <ul className="mt-5 pt-4 border-t border-cream/10 space-y-2" aria-label="Dette er på">
+            {kilder.map((kilde) => {
+              const on = current.pa.includes(kilde)
+              return (
+                <li key={kilde} className="flex items-center justify-between text-sm">
+                  <span className={on ? 'text-cream/80' : 'text-cream/30'}>{kilde}</span>
+                  <span
+                    className={`inline-flex items-center gap-1.5 text-xs font-medium ${on ? 'text-emerald-400' : 'text-cream/25'}`}
+                  >
+                    <span className={`w-2 h-2 rounded-full ${on ? 'bg-emerald-400' : 'bg-cream/20'}`} />
+                    {on ? 'På' : 'Av'}
+                  </span>
+                </li>
+              )
+            })}
+          </ul>
         </div>
       </div>
-      <p className="mt-6 text-center text-sm text-cream/55 min-h-[3rem] max-w-sm mx-auto" aria-live="polite">
+      <p className="mt-5 text-center text-sm text-cream/60 min-h-[3rem] max-w-sm mx-auto" aria-live="polite">
         {current.detail}
       </p>
     </div>
@@ -333,7 +357,7 @@ export default function Kirkelydpakken() {
             </p>
             <div className="flex items-center gap-3 text-copper-light font-medium">
               <Recycle size={20} />
-              Mindre nytt utstyr. Lavere kostnad.
+              Bærekraftig løsning – gjenbruk av utstyr der det er mulig
             </div>
           </div>
 
