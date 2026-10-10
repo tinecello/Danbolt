@@ -33,7 +33,7 @@ const steps = [
   { icon: Ruler, title: 'Rommet' },
 ]
 
-const bruksomrader = ['Gudstjeneste', 'Begravelse', 'Vielse og dåp', 'Konsert', 'Trosopplæring', 'Strømming', 'Møter og foredrag']
+const bruksomrader = ['Gudstjeneste', 'Begravelse', 'Vielse og dåp', 'Konsert', 'Musikkøvelser', 'Trosopplæring', 'Strømming']
 const betjenere = ['Kirketjener', 'Prest', 'Organist / kantor', 'Frivillige', 'Vikarer', 'Egen lydtekniker']
 
 const bildefelt = [
@@ -366,6 +366,13 @@ export default function Kartlegging() {
               Med disse opplysningene kan anlegget tilpasses, kobles og testes før det sendes til dere. Ha gjerne
               mobilen klar – bildene tar du underveis.
             </p>
+            <a
+              href="tel:+4797721779"
+              className="inline-flex items-center gap-2 -mt-6 mb-12 text-copper-light hover:underline"
+            >
+              <Phone size={16} />
+              Heller ta det på telefon? Ring 977 21 779
+            </a>
 
             <form
               ref={formRef}
@@ -417,16 +424,16 @@ export default function Kartlegging() {
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
                       <label className={labelClass} htmlFor="kirke">Kirke <span className="text-copper">*</span></label>
-                      <input id="kirke" name="kirke" className={inputClass} placeholder="Bardu kirke" />
+                      <input id="kirke" name="kirke" className={inputClass} placeholder="Navn på kirken" />
                     </div>
                     <div>
                       <label className={labelClass} htmlFor="sted">Sted / kommune</label>
-                      <input id="sted" name="sted" className={inputClass} placeholder="Setermoen" />
+                      <input id="sted" name="sted" className={inputClass} placeholder="Sted eller kommune" />
                     </div>
                   </div>
                   <div>
                     <label className={labelClass} htmlFor="menighet">Menighet eller fellesråd</label>
-                    <input id="menighet" name="menighet" className={inputClass} placeholder="Bardu menighet" />
+                    <input id="menighet" name="menighet" className={inputClass} placeholder="Navn på menighet eller fellesråd" />
                   </div>
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
@@ -435,7 +442,7 @@ export default function Kartlegging() {
                     </div>
                     <div>
                       <label className={labelClass} htmlFor="rolle">Rolle</label>
-                      <input id="rolle" name="rolle" className={inputClass} placeholder="Kirkeverge" />
+                      <input id="rolle" name="rolle" className={inputClass} placeholder="Kirkeverge, kirketjener, prest …" />
                     </div>
                   </div>
                   <div className="grid sm:grid-cols-2 gap-5">
@@ -508,11 +515,11 @@ export default function Kartlegging() {
                       name="storste_problem"
                       rows={3}
                       className={`${inputClass} resize-none`}
-                      placeholder="Talen fra prekestolen er utydelig bakerst, og musikk fra mobil låter tynt"
+                      placeholder="Beskriv kort hva som ikke fungerer godt nok i dag"
                     />
                   </div>
                   <div>
-                    <label className={labelClass} htmlFor="tidsplan">Når ønsker dere nytt anlegg?</label>
+                    <label className={labelClass} htmlFor="tidsplan">Når ønsker dere oppgradering, justering eller nytt lydanlegg?</label>
                     <select id="tidsplan" name="tidsplan" className={inputClass} defaultValue="">
                       <option value="">Velg</option>
                       <option>Så snart som mulig</option>
@@ -560,16 +567,16 @@ export default function Kartlegging() {
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
                       <label className={labelClass} htmlFor="tradlose_mikrofoner">Trådløse mikrofoner</label>
-                      <input id="tradlose_mikrofoner" name="tradlose_mikrofoner" className={inputClass} placeholder="2 stk, mygg og håndholdt" />
+                      <input id="tradlose_mikrofoner" name="tradlose_mikrofoner" className={inputClass} placeholder="Antall og type" />
                     </div>
                     <div>
                       <label className={labelClass} htmlFor="kablede_mikrofoner">Kablede mikrofoner</label>
-                      <input id="kablede_mikrofoner" name="kablede_mikrofoner" className={inputClass} placeholder="Prekestol og lesepult" />
+                      <input id="kablede_mikrofoner" name="kablede_mikrofoner" className={inputClass} placeholder="Antall og hvor de står" />
                     </div>
                   </div>
                   <div>
                     <label className={labelClass} htmlFor="musikkavspilling">Hvordan spilles musikk av i dag?</label>
-                    <input id="musikkavspilling" name="musikkavspilling" className={inputClass} placeholder="Mobil med kabel, CD-spiller, Bluetooth" />
+                    <input id="musikkavspilling" name="musikkavspilling" className={inputClass} placeholder="Utstyr eller måte dere spiller musikk på" />
                   </div>
                   <div>
                     <label className={labelClass} htmlFor="annet_utstyr">Annet vi bør vite om</label>
@@ -578,7 +585,7 @@ export default function Kartlegging() {
                       name="annet_utstyr"
                       rows={3}
                       className={`${inputClass} resize-none`}
-                      placeholder="Strømming, kor, band, piano med mikrofon, utstyr som skal flyttes"
+                      placeholder="Andre behov, ønsker eller utstyr"
                     />
                   </div>
                 </fieldset>
@@ -627,15 +634,15 @@ export default function Kartlegging() {
                     <div className="grid grid-cols-3 gap-3">
                       <div>
                         <label className={labelClass} htmlFor="lengde">Lengde (m)</label>
-                        <input id="lengde" name="lengde" inputMode="decimal" className={inputClass} placeholder="25" />
+                        <input id="lengde" name="lengde" inputMode="decimal" className={inputClass} placeholder="ca." />
                       </div>
                       <div>
                         <label className={labelClass} htmlFor="bredde">Bredde (m)</label>
-                        <input id="bredde" name="bredde" inputMode="decimal" className={inputClass} placeholder="12" />
+                        <input id="bredde" name="bredde" inputMode="decimal" className={inputClass} placeholder="ca." />
                       </div>
                       <div>
                         <label className={labelClass} htmlFor="takhoyde">Takhøyde (m)</label>
-                        <input id="takhoyde" name="takhoyde" inputMode="decimal" className={inputClass} placeholder="8" />
+                        <input id="takhoyde" name="takhoyde" inputMode="decimal" className={inputClass} placeholder="ca." />
                       </div>
                     </div>
                   </div>
@@ -727,12 +734,22 @@ export default function Kartlegging() {
               </div>
             </form>
 
-            <p className="mt-8 text-center text-sm text-cream/40">
-              Lettere å ta det på telefon?{' '}
-              <a href="tel:+4797721779" className="text-copper-light hover:underline">
-                Ring Thorbjørn på 977 21 779
+            <div className="mt-8 rounded-2xl border border-copper/30 bg-copper/[0.05] p-6 lg:p-8 flex flex-col sm:flex-row items-center gap-5 text-center sm:text-left">
+              <div className="w-14 h-14 flex-shrink-0 rounded-full bg-copper/15 border border-copper/30 flex items-center justify-center text-copper-light">
+                <Phone size={24} />
+              </div>
+              <div className="flex-1">
+                <p className="font-serif text-2xl text-cream mb-1">Lettere å ta det på telefon?</p>
+                <p className="text-cream/55">Ring Thorbjørn, så går dere gjennom kartleggingen sammen.</p>
+              </div>
+              <a
+                href="tel:+4797721779"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-copper/20 text-copper-light border border-copper/40 rounded-full font-medium text-lg hover:bg-copper/30 hover:border-copper transition-all whitespace-nowrap"
+              >
+                <Phone size={18} />
+                977 21 779
               </a>
-            </p>
+            </div>
           </div>
         </div>
       </section>
