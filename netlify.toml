@@ -1,5 +1,7 @@
+# Bygger bare den statiske forsiden. Det gamle React-oppsettet (prerender)
+# skal ikke kjøres, da det lager kopier av siden på gamle adresser.
 [build]
-  command = "npm install && npm run build"
+  command = "npm install && npx vite build"
   publish = "dist"
 
 [build.environment]
@@ -8,7 +10,7 @@
 
 # Staging skal kunne testes offentlig, men ikke dukke opp i søkemotorer.
 [context.staging]
-  command = "npm install && npm run build && cp ./custom-headers/_stagingHeaders ./dist/_headers"
+  command = "npm install && npx vite build && cp ./custom-headers/_stagingHeaders ./dist/_headers"
 
 # Gamle adresser fra forrige versjon av nettstedet sendes permanent (301)
 # til riktig del av den nye forsiden. Adresser som ikke finnes gir ekte 404.
