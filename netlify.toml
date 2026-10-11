@@ -15,6 +15,12 @@
 # Gamle adresser fra forrige versjon av nettstedet sendes permanent (301)
 # til riktig del av den nye forsiden. Adresser som ikke finnes gir ekte 404.
 [[redirects]]
+  from = "/favicon.ico"
+    to = "/favicon.svg"
+      status = 200
+
+      
+[[redirects]]
   from = "/kirkelydpakken"
   to = "/#losninger"
   status = 301
