@@ -10,10 +10,39 @@
 [context.staging]
   command = "npm install && npm run build && cp ./custom-headers/_stagingHeaders ./dist/_headers"
 
-# SPA-fallback: alle adresser (f.eks. /blogg/ns8175-etterklangskrav) serveres
-# av index.html, slik at React Router kan vise riktig side. Uten denne gir
-# direktebesøk og oppfrisking på undersider 404.
+# Gamle adresser fra forrige versjon av nettstedet sendes permanent (301)
+# til riktig del av den nye forsiden. Adresser som ikke finnes gir ekte 404.
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+  from = "/kirkelydpakken"
+  to = "/#losninger"
+  status = 301
+
+[[redirects]]
+  from = "/kartlegging"
+  to = "/#hensyn"
+  status = 301
+
+[[redirects]]
+  from = "/lyd-i-kirken"
+  to = "/#om"
+  status = 301
+
+[[redirects]]
+  from = "/kurs/*"
+  to = "/#kontakt"
+  status = 301
+
+[[redirects]]
+  from = "/blogg"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/blogg/*"
+  to = "/"
+  status = 301
+
+[[headers]]
+  for = "/bilder/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
