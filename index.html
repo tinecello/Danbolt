@@ -63,6 +63,13 @@ input[type=search]::-webkit-search-cancel-button{display:none}
   #hovedmeny a{padding:12px 14px;min-height:20px}
   #hovedmeny a:last-child{margin-top:4px;text-align:center}
 }
+
+@media(max-width:600px){
+  .church-photos{grid-template-columns:minmax(0,1fr)!important;height:auto!important;gap:12px!important}
+  .church-photos>img{aspect-ratio:4/5;height:auto!important;object-position:30% 40%!important}
+  .church-photos>div{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto!important;padding-top:0!important;gap:12px!important}
+  .church-photos>div>img{aspect-ratio:3/4;height:auto!important;border-radius:6px!important}
+}
 </style>
 </head>
 <body>
@@ -125,7 +132,7 @@ input[type=search]::-webkit-search-cancel-button{display:none}
       <a href="#losninger" style="background:#a8432a;color:#fff;padding:17px 30px;border-radius:999px;font-size:16px;font-weight:500" class="h2">Se Kirkelydpakken</a>
     </div>
   </div>
-  <div style="display:grid;grid-template-columns:1.3fr 1fr;gap:14px;height:min(680px,96vw)">
+  <div class="church-photos" style="display:grid;grid-template-columns:1.3fr 1fr;gap:14px;height:min(680px,96vw)">
     <img src="bilder/kirke-eksterior.jpg" alt="Hvit trekirke med rødt teglsteinstak og kirkegård" style="width:100%;height:100%;object-fit:cover;object-position:30% 40%;border-radius:999px 999px 6px 6px;display:block">
     <div style="display:grid;grid-template-rows:1.2fr 1fr;gap:14px;min-height:0;padding-top:64px">
       <img src="bilder/kirke-skyhimling.jpg" alt="Kirkerom med malt skyhimling og prekestol" style="width:100%;height:100%;object-fit:cover;object-position:50% 0%;border-radius:999px 999px 6px 6px;display:block;min-height:0">
