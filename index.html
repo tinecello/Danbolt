@@ -81,6 +81,72 @@ input[type=search]::-webkit-search-cancel-button{display:none}
 #romedal-panel-demo .demo-play{font:500 13px 'Hanken Grotesk',sans-serif;color:#a8432a;border:0;border-bottom:1px solid currentColor;background:transparent;padding:8px 0;min-height:44px;white-space:nowrap;cursor:pointer}
 #romedal-panel-demo .demo-play:disabled{opacity:.6}
 #romedal-panel-demo .demo-play:focus-visible{outline:2px solid #a8432a;outline-offset:4px}
+
+#kirkelydpakken-systemoversikt{width:100%}
+#kirkelydpakken-systemoversikt *{box-sizing:border-box}
+#kirkelydpakken-systemoversikt .story-product{--paper:#f3efe6;--ink:#1d1b17;--rust:#a8432a;--muted:#6d665b;background:var(--paper);color:var(--ink);padding:32px 28px;font-family:'Hanken Grotesk',sans-serif}
+#kirkelydpakken-systemoversikt .eyebrow{font-size:12px;letter-spacing:.16em;color:var(--rust)}
+#kirkelydpakken-systemoversikt .overview-title{font:400 clamp(34px,5vw,48px)/1 'Newsreader',serif;letter-spacing:-.02em;margin:14px 0}
+#kirkelydpakken-systemoversikt .overview-title em{color:var(--rust);font-weight:400}
+#kirkelydpakken-systemoversikt .intro{font-size:16px;line-height:1.6;color:#4a453c;margin:0 0 22px}
+#kirkelydpakken-systemoversikt button{font:500 13px 'Hanken Grotesk',sans-serif;cursor:pointer}
+#kirkelydpakken-systemoversikt .system-drawing{position:relative;display:grid;grid-template-columns:minmax(96px,1fr) minmax(210px,2.4fr) minmax(106px,1fr);grid-template-areas:'. panel .' '. control .' 'micro proc amp' '. . speakers';column-gap:32px;row-gap:22px;margin-top:26px;align-items:center}
+#kirkelydpakken-systemoversikt .connections{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+#kirkelydpakken-systemoversikt .connections path{fill:none;stroke:var(--ink);stroke-width:1.6;stroke-linejoin:round;stroke-linecap:round}
+#kirkelydpakken-systemoversikt .connections .control-path{stroke:var(--rust);stroke-dasharray:4 5;marker-end:url(#story-control-arrow)}
+#kirkelydpakken-systemoversikt .audio-a,#kirkelydpakken-systemoversikt .audio-b,#kirkelydpakken-systemoversikt .audio-c{marker-end:url(#story-audio-arrow)}
+#kirkelydpakken-systemoversikt .control-dot{fill:var(--rust)}
+#kirkelydpakken-systemoversikt .audio-dot{fill:var(--ink)}
+#kirkelydpakken-systemoversikt .panel-group{grid-area:panel;z-index:1;min-width:0}
+#kirkelydpakken-systemoversikt .panel-label{text-align:center;font:400 23px 'Newsreader',serif;margin-bottom:10px}
+#kirkelydpakken-systemoversikt .panel-screen{background:#151815;border:5px solid #292c28;border-radius:8px;overflow:hidden}
+#kirkelydpakken-systemoversikt .actual-panel{display:block;width:100%;height:auto}
+#kirkelydpakken-systemoversikt .control-label{grid-area:control;justify-self:center;background:var(--paper);color:var(--rust);font-size:12px;z-index:1;padding:2px 8px}
+#kirkelydpakken-systemoversikt .system-node{background:#e8e1d4;border-radius:6px;padding:15px 8px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;min-height:84px;text-align:center;z-index:1;font-size:14px;min-width:0}
+#kirkelydpakken-systemoversikt .system-node svg{width:20px;height:20px;stroke-width:1.5}
+#kirkelydpakken-systemoversikt .system-node small{font-size:11px;color:var(--muted)}
+#kirkelydpakken-systemoversikt .microphones{grid-area:micro}
+#kirkelydpakken-systemoversikt .processor{grid-area:proc;background:var(--ink);color:var(--paper)}
+#kirkelydpakken-systemoversikt .amplifier{grid-area:amp}
+#kirkelydpakken-systemoversikt .speakers{grid-area:speakers}
+#kirkelydpakken-systemoversikt .legend{display:flex;justify-content:center;flex-wrap:wrap;gap:12px 22px;margin:22px 0;font-size:12px;color:var(--muted)}
+#kirkelydpakken-systemoversikt .legend>span{display:flex;align-items:center;gap:7px}
+#kirkelydpakken-systemoversikt .line-key{display:inline-block;width:24px;height:0;border-top:2px solid var(--ink)}
+#kirkelydpakken-systemoversikt .control-key{border-top:2px dashed var(--rust)}
+#kirkelydpakken-systemoversikt .technician{font-size:14px;border-top:1px solid #d2c9ba;padding:15px 0}
+#kirkelydpakken-systemoversikt .technician summary{color:var(--ink);min-height:30px;padding:3px 0}
+#kirkelydpakken-systemoversikt .technician p{color:#4a453c;line-height:1.6}
+#kirkelydpakken-systemoversikt .tech-route{display:flex;flex-wrap:wrap;gap:12px;align-items:center;font-size:13px}
+@media(max-width:600px){
+#kirkelydpakken-systemoversikt .story-product{padding:26px 18px}
+#kirkelydpakken-systemoversikt .system-drawing{grid-template-columns:minmax(90px,1fr) minmax(130px,1.5fr);grid-template-areas:'panel panel' '. control' 'micro proc' '. amp' '. speakers';column-gap:28px;row-gap:20px}
+#kirkelydpakken-systemoversikt .panel-group{width:min(100%,300px);justify-self:center}
+#kirkelydpakken-systemoversikt .control-label{justify-self:center}
+#kirkelydpakken-systemoversikt .system-node{min-height:72px;padding:12px 6px}
+#kirkelydpakken-systemoversikt .legend{justify-content:flex-start}
+}
+
+#kirkelydpakken-systemoversikt .system-drawing{column-gap:36px;row-gap:28px;padding:44px 0 12px}
+#kirkelydpakken-systemoversikt .package-frame{position:absolute;border:1px solid #a8432a;border-radius:10px;background:#e8e1d455;pointer-events:none}
+#kirkelydpakken-systemoversikt .package-frame>span{position:absolute;top:-11px;left:12px;background:#f3efe6;padding:0 8px;color:#a8432a;font-size:14px;font-weight:500}
+@media(max-width:600px){
+#kirkelydpakken-systemoversikt .system-drawing{grid-template-columns:minmax(76px,.8fr) minmax(154px,1.6fr);grid-template-areas:'. panel' '. control' 'micro proc' '. amp' '. speakers';column-gap:28px;row-gap:30px;padding-top:44px}
+#kirkelydpakken-systemoversikt .panel-group{width:100%}
+#kirkelydpakken-systemoversikt .panel-label{font-size:18px}
+#kirkelydpakken-systemoversikt .processor{font-size:12px}
+}
+
+#kirkelydpakken-systemoversikt .motion-controls{display:flex;justify-content:flex-end;margin-top:8px}
+#kirkelydpakken-systemoversikt .motion-toggle{border:0;background:transparent;color:#6d665b;font:400 11px 'Hanken Grotesk',sans-serif;padding:8px 0;min-height:36px;text-decoration:underline}
+#kirkelydpakken-systemoversikt .motion-toggle[hidden]{display:none}
+#kirkelydpakken-systemoversikt .legend{margin:18px 0 0}
+#kirkelydpakken-systemoversikt .technician{margin-top:12px}
+#kirkelydpakken-systemoversikt .control-dot{r:5;stroke:#f3efe6;stroke-width:1.5}
+#kirkelydpakken-systemoversikt .audio-dot{r:5;stroke:#f3efe6;stroke-width:1.5}
+#kirkelydpakken-systemoversikt .equipment-note{font-size:14px;line-height:1.6;color:#4a453c;margin:18px 0}
+#kirkelydpakken-systemoversikt{max-width:860px;margin:0 auto 72px}
+@media(max-width:600px){#kirkelydpakken-systemoversikt{width:calc(100% + 32px);margin-left:-16px;margin-right:-16px}#kirkelydpakken-systemoversikt .system-drawing{grid-template-columns:minmax(64px,.8fr) minmax(140px,1.6fr)}}
+
 </style>
 </head>
 <body>
@@ -287,6 +353,29 @@ input[type=search]::-webkit-search-cancel-button{display:none}
         <p style="font-size:18px;line-height:1.6;color:#4a453c;margin:0;text-wrap:pretty">Jeg er ikke bundet til produsenter, utstyret velges etter rommet og brukerne. Gjenbruk av eksisterende utstyr er selvfølgelig noe vi tilstreber.</p>
       </div>
     </div>
+    <div id="kirkelydpakken-systemoversikt">
+  <section class="story-product" aria-labelledby="systemoversikt-tittel">
+    <div class="eyebrow">KIRKELYDPAKKEN</div>
+    <h3 id="systemoversikt-tittel" class="overview-title">Enkel å bruke.<br><em>Tilpasset kirken.</em></h3>
+    <div class="system-drawing"><div class="package-frame"><span>Kirkelydpakken</span></div>
+      <svg class="connections" aria-hidden="true"><defs><marker id="story-audio-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="5" markerHeight="5" orient="auto"><path d="M1 1 L7 4 L1 7" style="stroke:#1d1b17;fill:none;stroke-width:1.5"></path></marker><marker id="story-control-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="5" markerHeight="5" orient="auto"><path d="M1 1 L7 4 L1 7" style="stroke:#a8432a;fill:none;stroke-width:1.5"></path></marker></defs><path class="control-path"></path><path class="audio-a"></path><path class="audio-b"></path><path class="audio-c"></path><circle class="control-dot" r="4" opacity="0"></circle><circle class="audio-dot" r="4" opacity="0"></circle></svg>
+      <div class="panel-group">
+        <div class="panel-label">Betjeningspanel</div>
+        <div class="panel-screen" role="img" aria-label="Betjeningspanel med faktisk skjermbilde. Bevegelsen viser styring og lyd langs forbindelsene."><canvas class="actual-panel" width="1634" height="918">Betjeningspanel med volumskyvere og knapper.</canvas></div>
+      </div>
+      <div class="control-label">Styring</div>
+      <div class="system-node microphones"><i data-lucide="mic" aria-hidden="true"></i><span>Mikrofoner</span></div>
+      <div class="system-node processor"><i data-lucide="sliders-horizontal" aria-hidden="true"></i><span>Lydprosessor (DSP)</span></div>
+      <div class="system-node amplifier"><i data-lucide="audio-lines" aria-hidden="true"></i><span>Forsterker</span></div>
+      <div class="system-node speakers"><i data-lucide="speaker" aria-hidden="true"></i><span>Høyttalere</span></div>
+    </div>
+    <div class="legend"><span><i class="line-key control-key"></i>Styring fra panelet</span><span><i class="line-key audio-key"></i>Lydsignal</span></div>
+    <div class="motion-controls"><button type="button" class="motion-toggle cursor-interaction" aria-pressed="false">Pause bevegelse</button></div>
+    <p class="equipment-note">Mikrofoner, forsterker og høyttalere er tilkoblet utstyr. Her kan eksisterende utstyr brukes eller oppgraderes etter behov.</p>
+    <details class="technician"><summary class="cursor-interaction">For lydteknikere</summary><p>Ekstern mikser kan inngå i løsningen, med en egen panelside for profesjonelle brukere.</p><div class="tech-route"><span>Ekstern mikser</span><span aria-hidden="true">→</span><span>Lydprosessor (DSP)</span></div></details>
+  </section>
+</div>
+
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:48px 32px">
       
         <div style="display:flex;flex-direction:column;gap:12px;border-top:1px solid rgba(29,27,23,.18);padding-top:22px;position:relative">
@@ -543,6 +632,43 @@ sok.addEventListener('input',function(){var q=sok.value.trim().toLowerCase(),n=0
   picture.addEventListener('load',initialize);
   if(picture.complete&&picture.naturalWidth)initialize();
   document.addEventListener('visibilitychange',()=>{if(document.hidden&&running){running=false;cancelAnimationFrame(raf);last=0;label();}});
+})();
+</script>
+<script>(function(){
+const root=document.getElementById('kirkelydpakken-systemoversikt'),drawing=root.querySelector('.system-drawing'),svg=drawing.querySelector('.connections');
+const panel=root.querySelector('.panel-screen'),panelGroup=root.querySelector('.panel-group'),proc=root.querySelector('.processor'),micro=root.querySelector('.microphones'),amp=root.querySelector('.amplifier'),speaker=root.querySelector('.speakers'),box=root.querySelector('.package-frame');
+const control=svg.querySelector('.control-path'),audio=['.audio-a','.audio-b','.audio-c'].map(s=>svg.querySelector(s)),controlDot=svg.querySelector('.control-dot'),audioDot=svg.querySelector('.audio-dot'),button=root.querySelector('.motion-toggle');
+const image=new Image(),canvas=root.querySelector('.actual-panel');image.onload=()=>canvas.getContext('2d').drawImage(image,0,0,1634,918);image.src=document.querySelector('#romedal-panel-demo .panel-original').src;
+const reduced=matchMedia('(prefers-reduced-motion: reduce)');let running=false,elapsed=0,last=0,frame=0,inView=false,userPaused=false;
+function rect(el){const r=el.getBoundingClientRect(),b=drawing.getBoundingClientRect();return{x:r.x-b.x,y:r.y-b.y,w:r.width,h:r.height};}
+function draw(){const p=rect(panel),g=rect(panelGroup),c=rect(proc),m=rect(micro),a=rect(amp),s=rect(speaker),mobile=matchMedia('(max-width:600px)').matches;
+box.style.left=(Math.min(g.x,c.x)-14)+'px';box.style.top=(g.y-22)+'px';box.style.width=(Math.max(g.x+g.w,c.x+c.w)-Math.min(g.x,c.x)+28)+'px';box.style.height=(c.y+c.h-g.y+36)+'px';
+svg.setAttribute('viewBox',`0 0 ${drawing.clientWidth} ${drawing.clientHeight}`);
+control.setAttribute('d',`M${p.x+p.w/2} ${p.y+p.h} V${c.y}`);
+audio[0].setAttribute('d',`M${m.x+m.w} ${m.y+m.h/2} H${c.x}`);
+audio[1].setAttribute('d',mobile?`M${c.x+c.w/2} ${c.y+c.h} V${a.y}`:`M${c.x+c.w} ${c.y+c.h/2} H${a.x}`);
+audio[2].setAttribute('d',`M${a.x+a.w/2} ${a.y+a.h} V${s.y}`);render(elapsed);}
+function point(dot,path,t){const p=path.getPointAtLength(path.getTotalLength()*Math.max(0,Math.min(1,t)));dot.setAttribute('cx',p.x);dot.setAttribute('cy',p.y);}
+function render(t){
+const phase=(t/3600+.16)%1;
+controlDot.setAttribute('opacity',reduced.matches?'0':String(Math.min(1,phase*9,(1-phase)*9)));point(controlDot,control,phase);
+for(let n=0;n<audio.length;n++){
+const part=(t/3000+n*.27+.18)%1,dot=audioDots[n];
+dot.setAttribute('opacity',reduced.matches?'0':String(Math.min(1,part*9,(1-part)*9)));point(dot,audio[n],part);
+}}
+function tick(now){if(!running)return;if(last)elapsed+=now-last;last=now;render(elapsed);frame=requestAnimationFrame(tick);}
+function sync(){
+const shouldRun=inView&&!userPaused&&!reduced.matches&&!document.hidden;
+button.hidden=reduced.matches;button.textContent=userPaused?'Fortsett bevegelse':'Pause bevegelse';button.setAttribute('aria-pressed',String(userPaused));
+if(shouldRun&&!running){running=true;last=0;frame=requestAnimationFrame(tick);}
+else if(!shouldRun&&running){running=false;cancelAnimationFrame(frame);last=0;}
+if(reduced.matches)render(0);
+}
+button.addEventListener('click',()=>{userPaused=!userPaused;sync();});
+reduced.addEventListener('change',sync);document.addEventListener('visibilitychange',sync);
+new IntersectionObserver(entries=>{inView=entries[0].isIntersecting;sync();},{threshold:0,rootMargin:'80px 0px'}).observe(drawing);
+const audioDots=[audioDot];for(let n=1;n<3;n++){const dot=audioDot.cloneNode(true);svg.appendChild(dot);audioDots.push(dot);}
+new ResizeObserver(draw).observe(drawing);document.fonts?.ready.then(draw);draw();sync();
 })();
 </script>
 </body>
