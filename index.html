@@ -51,13 +51,26 @@ input[type=search]::-webkit-search-cancel-button{display:none}
 #samtykke .nei:hover{background:rgba(243,239,230,.1)}
 .cookielenke{background:none;border:0;padding:0;font:inherit;font-size:15px;color:#6d665b;text-decoration:underline;cursor:pointer;text-align:left}
 .cookielenke:hover{color:#a8432a}
+
+.menu-toggle{display:none;font:500 15px 'Hanken Grotesk',sans-serif;color:#1d1b17;background:transparent;border:1px solid rgba(29,27,23,.25);border-radius:999px;min-height:44px;padding:10px 14px;cursor:pointer}
+.menu-toggle:focus-visible,#hovedmeny a:focus-visible{outline:2px solid #a8432a;outline-offset:4px}
+@media(max-width:760px){
+  .header-inner{padding:12px 16px!important;gap:12px!important}
+  .menu-ready .menu-toggle{display:inline-flex;align-items:center;justify-content:center}
+  .menu-ready #hovedmeny{display:none!important}
+  .menu-ready #hovedmeny.is-open{display:flex!important}
+  #hovedmeny{flex-basis:100%;flex-direction:column;align-items:stretch!important;gap:8px!important;padding:12px 0 4px;border-top:1px solid rgba(29,27,23,.12);max-height:calc(100dvh - 100px);overflow-y:auto}
+  #hovedmeny a{padding:12px 14px;min-height:20px}
+  #hovedmeny a:last-child{margin-top:4px;text-align:center}
+}
 </style>
 </head>
 <body>
 <header style="position:sticky;top:0;z-index:20;background:rgba(243,239,230,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(29,27,23,.08)">
-  <div style="max-width:1360px;margin:0 auto;padding:16px 32px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:14px">
+  <div class="header-inner" style="max-width:1360px;margin:0 auto;padding:16px 32px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:14px">
     <a href="#" style="display:flex;flex-direction:column;color:#1d1b17;line-height:1.1"><img src="/danbolt-logo.png" alt="Danbolt" width="140" height="30" style="display:block;width:140px;height:30px"><span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#6d665b">Lydteknikk for kirkerom</span></a>
-    <nav style="display:flex;flex-wrap:wrap;gap:6px 26px;font-size:15px;align-items:center">
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="hovedmeny" hidden>Meny</button>
+    <nav id="hovedmeny" aria-label="Hovedmeny" style="display:flex;flex-wrap:wrap;gap:6px 26px;font-size:15px;align-items:center">
       <a href="#losninger" style="color:#1d1b17">Løsninger</a>
       <a href="#installasjoner" style="color:#1d1b17">Installasjoner</a>
       <a href="#hensyn" style="color:#1d1b17">Rådgivning</a>
@@ -66,6 +79,38 @@ input[type=search]::-webkit-search-cancel-button{display:none}
     </nav>
   </div>
 </header>
+<script>
+(function(){
+  var header=document.querySelector('header'),button=header.querySelector('.menu-toggle'),nav=document.getElementById('hovedmeny');
+  var mobile=window.matchMedia('(max-width:760px)');
+  function closeMenu(restoreFocus){
+    nav.classList.remove('is-open');
+    button.setAttribute('aria-expanded','false');
+    button.textContent='Meny';
+    if(restoreFocus)button.focus({preventScroll:true});
+  }
+  button.hidden=false;
+  header.classList.add('menu-ready');
+  button.addEventListener('click',function(){
+    var open=button.getAttribute('aria-expanded')!=='true';
+    nav.classList.toggle('is-open',open);
+    button.setAttribute('aria-expanded',String(open));
+    button.textContent=open?'Lukk':'Meny';
+  });
+  nav.addEventListener('click',function(event){if(event.target.closest('a')&&mobile.matches)closeMenu(true);});
+  header.addEventListener('keydown',function(event){
+    if(event.key==='Escape'&&button.getAttribute('aria-expanded')==='true'){
+      event.preventDefault();closeMenu(true);
+    }
+  });
+  mobile.addEventListener('change',function(){
+    var focusInNav=nav.contains(document.activeElement);
+    closeMenu(mobile.matches&&focusInNav);
+    if(!mobile.matches&&document.activeElement===button)nav.querySelector('a').focus();
+  });
+})();
+</script>
+
 
 <main>
 <section style="max-width:1360px;margin:0 auto;padding:56px 32px 40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,500px),1fr));gap:56px;align-items:center">
